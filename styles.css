@@ -314,7 +314,7 @@ body {
     margin-left: 5%;
     margin-right: 5%;
     color: white;
-    background: url('resources/texture.png'); /* Use the local image file */
+    background: url('./resources/texture.png'); /* Use the local image file */
     background-size: auto 200%; /* Double the height to ensure smooth scrolling */
     background-repeat: repeat; /* Repeat both horizontally and vertically */
     background-position: 50% 0%; /* Starts from the top */
