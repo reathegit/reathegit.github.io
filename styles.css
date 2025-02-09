@@ -543,9 +543,9 @@ main {
     margin-right: 4%;
 }
 
-/*Projects Page*/
+/*The Vault Page*/
 
-#projects {
+#vault {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -553,7 +553,7 @@ main {
     width: 100%;
 }
 
-.project {
+.vault {
     margin-top: 5%;
     margin-bottom: 1%;
     width: 620px;
@@ -563,11 +563,11 @@ main {
     margin-right: 8%;
 }
 
-.project:hover .video {
+.vault:hover .video {
     -webkit-filter: brightness(120%) contrast(90%);
 }
 
-.projectH1, .gameTitle, 
+.vaultH1, .gameTitle, 
 #bio-title, #career-history-title, 
 #education-title, #strengths-title, #passions-title {
     font-weight: 550;
@@ -592,21 +592,21 @@ main {
 }
 
 /* Change to white on hover */
-.project:hover .projectH1, 
-.project:hover .gameTitle {
+.vault:hover .vaultH1, 
+.vault:hover .gameTitle {
     background: none;
     -webkit-background-clip: unset;
     color: white;
 }
 
-.projectTxt {
+.vaultTxt {
     color: white;
     padding-top: 1%;
     margin-left: 4%;
     margin-right: 4%;
 }
 
-.projectINFO {
+.vaultINFO {
     background-color: #212121;
     border-radius: 3px;
     float: right;
