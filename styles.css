@@ -615,9 +615,14 @@ main {
     width: 55%;
 }
 
-.gameThumbnail {
-    width: 100%; /* Adjust to fit your layout */
-    height: auto;
-    border-radius: 10px; /* Optional: rounded corners */
-    object-fit: cover; /* Ensures the video fills the area */
+.videoContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Ensures the correct ratio */
+    overflow: hidden; /* Keeps iframe within the rounded border */
+}
+
+.videoContainer iframe {
+    width: 100%;
+    height: 100%;
 }
