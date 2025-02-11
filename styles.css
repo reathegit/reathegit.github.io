@@ -378,6 +378,14 @@ li {
     text-align: left;
 }
 
+.h3 {
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+    margin-top: -1%;
+    text-align: left;
+}
+
 #about {
     position: absolute;
     margin-left: 22%;
@@ -484,7 +492,7 @@ main {
 }
 
 .designSection {
-    margin-top: 5%;
+    margin-top: 50px;
     margin-bottom: 1%;
     width: 1800px;
     height: 1600px;
@@ -492,6 +500,65 @@ main {
     margin-left: 4%;
     margin-right: 4%;
 }
+
+
+
+
+#articleSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.articleSection {
+    margin-top: 50px;
+    margin-bottom: 1%;
+    width: 1800px;
+    height: 500px;
+    background-color: #191919;
+    margin-left: 4%;
+    margin-right: 4%;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.article {
+    display: flex;
+    flex-direction: column; /* Stack title above image */
+    align-items: center; /* Center-align items horizontally */
+    width: 300px; /* Give each column a fixed width */
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* .article:first-child {
+    margin-left: 40px;*/ /* Add margin to the left of the first article */
+/*}*/
+
+.title {
+    text-align: center; /* Center-align the text inside the title */
+    width: 100%; /* Make title take full width of the article container */
+}
+
+.image {
+    width: 100%; /* Make image take full width of the article container */
+    display: flex;
+    justify-content: center; /* Center-align the image horizontally */
+}
+
+.article-image {
+    width: 240px; /* Fixed width for the image */
+    height: 240px; /* Fixed height for the image */
+    margin-top: 10px; /* Space between title and image */
+}
+
+
 
 
 #sections {
@@ -522,6 +589,16 @@ main {
     margin-right: 4%;
 }
 
+.nSections {
+    margin-top: 3%;
+    margin-bottom: 0%;
+    width: 300px;
+    height: 300px;
+    background-color: #191919;
+    margin-left: 0%;
+    margin-right: 4%;
+}
+
 .sectionTxt {
     color: rgb(255, 255, 255);
     padding-top: 1%;
@@ -543,6 +620,8 @@ main {
     margin-right: 4%;
 }
 
+
+
 /*The Vault Page*/
 
 #vault {
@@ -554,8 +633,18 @@ main {
 }
 
 .vault {
-    margin-top: 5%;
-    margin-bottom: 1%;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 620px;
+    height: 556px;
+    background-color: #191919;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.vaultRow1 {
+    margin-top: 50px;
+    margin-bottom: 40px;
     width: 620px;
     height: 556px;
     background-color: #191919;
@@ -626,3 +715,6 @@ main {
     width: 100%;
     height: 100%;
 }
+
+/* War Room News */
+
