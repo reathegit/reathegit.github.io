@@ -929,8 +929,8 @@ main {
 }
 
 .fullscreen-image {
-    max-width: 95vw !important;
-    max-height: 95vh !important;
+    max-width: 70vw !important;  /* Changed from 95vw to 70vw */
+    max-height: 70vh !important; /* Changed from 95vh to 70vh */
     width: auto !important;
     height: auto !important;
     object-fit: contain !important;

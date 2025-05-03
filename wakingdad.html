@@ -108,16 +108,14 @@
                         rightArrow.className = 'nav-arrow nav-arrow-right';
                         rightArrow.innerHTML = '►';
 
-                        // Create full-screen image (MODIFIED FOR LARGER SIZE)
+                        // Create full-screen image (NOW AT 70% SIZE)
                         const fullscreenImage = document.createElement('img');
                         fullscreenImage.className = 'fullscreen-image';
                         fullscreenImage.src = image.src;
                         fullscreenImage.alt = 'Full-screen screenshot';
-                        // Force larger display
-                        fullscreenImage.style.maxWidth = 'none';
-                        fullscreenImage.style.maxHeight = 'none';
-                        fullscreenImage.style.width = 'auto';
-                        fullscreenImage.style.height = '95vh';
+                        // Set to 70% of viewport size
+                        fullscreenImage.style.maxWidth = '70vw';
+                        fullscreenImage.style.maxHeight = '70vh';
 
                         // Append elements
                         overlay.appendChild(closeButton);
