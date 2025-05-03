@@ -936,8 +936,9 @@ main {
     border-radius: 5px; /* Match screenshot style */
 }
 
+/* Updated arrow positioning */
 .nav-arrow {
-    position: fixed;
+    position: absolute; /* Changed from fixed to absolute */
     top: 50%;
     transform: translateY(-50%);
     font-size: 40px;
@@ -951,11 +952,26 @@ main {
 }
 
 .nav-arrow-left {
-    left: 20px;
+    left: -60px; /* Position left arrow outside the image */
 }
 
 .nav-arrow-right {
-    right: 20px;
+    right: -60px; /* Position right arrow outside the image */
+}
+
+/* Container needs relative positioning */
+.videoContainer, .vaultIMG {
+    position: relative; /* This makes arrows position relative to these containers */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .nav-arrow-left {
+        left: -40px;
+    }
+    .nav-arrow-right {
+        right: -40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -963,16 +979,15 @@ main {
         font-size: 32px;
     }
     .nav-arrow-left {
-        left: 10px;
+        left: -30px;
     }
     .nav-arrow-right {
-        right: 10px;
+        right: -30px;
     }
 }
 
 .nav-arrow:hover {
-    transform: translateY(-50%) scale(1.2); /* Scale only, keep gradient */
-    cursor: pointer;
+    transform: translateY(-50%) scale(1.2);
 }
 
 .close-overlay {
