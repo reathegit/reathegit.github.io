@@ -881,7 +881,7 @@ main {
 
 .vaultIMG .IMG {
     display: block;
-    width: calc(25% - 20px); /* Each image takes 25% of container width minus 20px for margins */
+    width: calc(20% - 20px); /* Each image takes 25% of container width minus 20px for margins */
     margin: 0 10px; /* 10px margin on left and right */
     height: auto;
     border-radius: 5px;
