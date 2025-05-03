@@ -718,3 +718,118 @@ main {
 
 /* War Room News */
 
+/* Waking Dad Page */
+
+/* Back Button */
+.backButton {
+    display: flex;
+    align-items: center;
+    margin: 20px 8%;
+    padding: 10px;
+    background-color: #212121;
+    border-radius: 5px;
+    width: fit-content;
+    transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.backButton a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.backArrow {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.back {
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s linear infinite;
+}
+
+.backButton:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Play Now Button */
+.play-button {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 8%;
+    padding: 10px 20px;
+    background-color: #ff4d4d; /* Red to match itch.io branding */
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.play-button img {
+    margin-left: 10px;
+}
+
+.play-button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Video Section */
+.projectVid {
+    display: flex;
+    justify-content: center;
+    margin: 30px 8%;
+}
+
+.vid {
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Info Section */
+.projectINFO {
+    margin: 30px 8%;
+    padding: 20px;
+    background-color: #191919;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.projectINFO .vaultH1 {
+    margin-bottom: 15px;
+}
+
+.projectINFO .vaultTxt {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Screenshots Section */
+.vaultIMG {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 8%;
+}
+
+.vaultIMG .IMG {
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.075s ease-in-out;
+}
+
+.vaultIMG .IMG:hover {
+    transform: scale(1.05);
+}

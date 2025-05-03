@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Waking Dad, a fast-paced game designed by Reason Delafét, where you save your father from a coma in under a minute.">
+        <meta name="keywords" content="Waking Dad, game design, Reason Delafét, level design">
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <link href="animation.css" type="text/css" rel="stylesheet">
+        <link href="mediaqueries.css" type="text/css" rel="stylesheet">
+        <title>Waking Dad - Reason Delafét Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+        <script src="https://kit.fontawesome.com/5da9ce64bc.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="topBar">
+            <h1 class="h1 name-container" id="myName">
+                <a href="index.html">Reason Delafét</a>
+            </h1>
+            <h2 class="h2 title-container" id="Uni">Level Designer and Writer</h2>
+            <nav id="nav" class="navigation">
+                <ul id="nav-items">
+                    <li class="top-nav"><a href="index.html">Player One</a></li>
+                    <li class="top-nav"><a href="thevault.html">The Vault</a></li>
+                    <li class="top-nav"><a href="warroom.html">War Room</a></li>
+                </ul>
+                <ul id="buttons">
+                    <a href="https://www.linkedin.com/in/reasondelafetgame/"><li class="button fa-brands fa-linkedin" id="linkedin"></li></a>
+                    <a href="https://x.com/ReasonDelafet"><li class="button fa-brands fa-x-twitter" id="x"></li></a>
+                    <a href="https://reasondelafet.wordpress.com/"><li class="button fa-brands fa-wordpress" id="wordpress"></li></a>
+                    <a href="https://bopbop-studios.itch.io/waking-dad"><li class="button fa-brands fa-itch-io" id="itchio"></li></a>
+                    <a href="mailto:reasondelafet@gmail.com"><li class="button fa-solid fa-envelope" id="email"></li></a>
+                    <a href="resources/cv.pdf" download><li class="button fa-solid fa-arrow-down" id="CV">CV</li></a>
+                </ul>
+            </nav>
+            <div class="bubble-container">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+iont class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+        </header>
+
+        <!-- WAKING DAD SECTION -->
+        <main>
+            <!-- Back Button -->
+            <section class="backButton">
+                <a href="thevault.html"><i class="backArrow fa-solid fa-angle-left" style="color: #ffffff"></i><h1 class="back">Back</h1></a>
+            </section>
+
+            <!-- Play Now Button -->
+            <a href="https://bopbop-studios.itch.io/waking-dad" class="play-button">Play Now <img src="resources/share.png" width="25" height="auto" alt="Share icon"></a>
+
+            <!-- Video Section -->
+            <section id="wakingDadVID" class="projectVid">
+                <iframe class="vid" width="560" height="315"
+                    src="https://www.youtube.com/embed/l-_n_-TSjb4?autoplay=1&mute=1" 
+                    title="Waking Dad gameplay preview" frameborder="0" 
+                    allow="autoplay; encrypted-media" allowfullscreen muted playsinline
+                    aria-label="Waking Dad gameplay preview video">
+                </iframe>
+            </section>
+
+            <!-- Info Section -->
+            <section id="wakingDadINFO" class="projectINFO">
+                <h1 class="vaultH1">Waking Dad - Game Jam Project</h1>
+                <p class="vaultTxt">Made in <b>Unity Engine</b>, Waking Dad is a <b>fast-paced action game</b> where you must save your father from a coma in under 60 seconds by crafting a life-saving potion in his basement lab.<br><br>
+                                   As the <b>Design Lead</b>, I designed the levels, balanced the gameplay mechanics, and ensured the chaotic yet intuitive experience inspired by Breaking Bad.<br><br>
+                                   The game was developed during a <b>game jam</b>, pushing our team to create a polished prototype under tight constraints using <b>C#</b> and Unity’s particle systems for visual effects.</p>
+            </section>
+
+            <!-- Screenshots Section -->
+            <div id="wakingDadIMG" class="vaultIMG">
+                <img id="wakingDad1" class="IMG" src="resources/WD1.png" alt="Waking Dad gameplay screenshot 1">
+                <img id="wakingDad2" class="IMG" src="resources/WD2.png" alt="Waking Dad gameplay screenshot 2">
+                <img id="wakingDad3" class="IMG" src="resources/WD3.png" alt="Waking Dad gameplay screenshot 3">
+                <img id="wakingDad4" class="IMG" src="resources/WD4.png" alt="Waking Dad gameplay screenshot 4">
+            </div>
+        </main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+        <script src="main.js"></script>
+
+        <footer>
+            <p id="footer">Designed and built by Reason Delafét.<br>
+            All rights reserved. © <br><br></p>
+        </footer>
+    </body>
+</html>
