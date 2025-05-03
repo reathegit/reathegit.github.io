@@ -955,11 +955,11 @@ main {
 }
 
 .nav-arrow-left {
-    left: 500px; /* 10px left of image */
+    left: 400px;
 }
 
 .nav-arrow-right {
-    right: 500px; /* 10px right of image */
+    right: 400px;
 }
 
 .close-overlay {
