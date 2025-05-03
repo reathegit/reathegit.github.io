@@ -936,41 +936,47 @@ main {
     border-radius: 5px; /* Match screenshot style */
 }
 
-.close-overlay {
-    position: absolute;
-    top: 30px;
-    left: 40px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer; /* Hand cursor */
-    transition: transform 0.2s ease-in-out;
-}
-
-.close-overlay:hover {
-    transform: scale(1.2); /* Matches site’s hover effects */
-    cursor: pointer; /* Reinforce hand cursor */
-}
-
 .nav-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-size: 40px;
-    color: white;
+    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0); /* Matches .button */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.075s ease-in-out; /* Matches .button */
     z-index: 2100; /* Above overlay */
 }
 
 .nav-arrow:hover {
-    transform: translateY(-50%) scale(1.2); /* Matches close button */
+    transform: translateY(-50%) scale(1.2); /* Scale only, keep gradient */
     cursor: pointer;
 }
 
 .nav-arrow-left {
-    left: 20px;
+    left: -50px; /* 10px left of image */
 }
 
 .nav-arrow-right {
-    right: 20px;
+    right: -50px; /* 10px right of image */
+}
+
+.close-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;
+    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0); /* Matches .button */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.075s ease-in-out; /* Matches .button */
+}
+
+.close-overlay:hover {
+    transform: scale(1.2); /* Scale only, keep gradient */
+    cursor: pointer;
 }
