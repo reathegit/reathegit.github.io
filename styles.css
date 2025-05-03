@@ -1,105 +1,92 @@
 /* unsure if .textbox .experience and .vaultInfo do anything */
 
-/* Base Styles */
-html, body {
-    height: 100%;
-    margin: 0;
+/* Adjust to user device */
+
+@media (max-width: 768px) {
+    .video-info-container {
+        flex-direction: column;
+    }
+    .projectVid, .projectINFO {
+        width: 100%;
+    }
+    .vaultIMG {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 5%;
-    margin-right: 5%;
-    color: white;
-    background: url('./resources/texture.png');
-    background-size: auto 200%;
-    background-repeat: repeat;
-    background-position: 50% 0%;
-    background-attachment: fixed;
-    animation: moveBackground 50s linear infinite;
-    display: flex;
-    flex-direction: column;
+/* Home Page + Banner */
+
+/* General Layout Adjustment */
+#bio {
+    text-align: left;
+    margin-top: 20px;
+    width: 100%;
 }
 
-main {
-    flex: 1;
-    padding-top: 175px;
+#bio-title, #career-history-title, #education-title, #strengths-title, #passions-title {
+    text-align: center; /* Keep titles centered */
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: gradientAnimation 10s ease infinite;
+    transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
+    transform: scale(1.1);
+    cursor: default;
+    filter: brightness(1.65);
 }
 
-@keyframes moveBackground {
-    0% { background-position: 50% 0%; }
-    100% { background-position: 50% -100%; }
-}
-
-a {
+/* Updated to remove links from titles */
+#bio-title a, #career-history-title a, #education-title a, #strengths-title a, #passions-title a {
     text-decoration: none;
     color: inherit;
-    font-size: inherit;
 }
 
-li {
-    color: white;
+/* Career History - top-left */
+#career-history {
+    margin-top: 7%;
+    background-color: #212121;
+    width: 40%;
+    padding: 10px;
+    padding-left: 25px;
+    padding-top: 5px;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Animations */
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Education - bottom-left */
+#education {
+    margin-top: 7%;
+    background-color: #212121;
+    width: 40%;
+    padding: 10px;
+    padding-left: 25px;
+    padding-top: 5px;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes combinedAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Strengths - top-right */
+#strengths {
+    float: right;
+    width: 40%;
+    margin-top: -82%;
+    margin-bottom: 5%;
 }
 
-@keyframes glowEffect {
-    0% { box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5); }
-    33% { box-shadow: 0px 0px 20px rgba(0, 255, 136, 0.5); }
-    66% { box-shadow: 0px 0px 20px rgba(255, 0, 136, 0.5); }
-    100% { box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5); }
+/* Passions - bottom-right */
+#passions {
+    float: right;
+    width: 40%;
+    margin-top: -42%;
+    margin-bottom: 5%;
 }
 
-@keyframes gradientGlow {
-    0% { box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5); }
-    33% { box-shadow: 0px 5px 20px rgba(0, 255, 136, 0.5); }
-    66% { box-shadow: 0px 5px 20px rgba(255, 0, 136, 0.5); }
-    100% { box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5); }
-}
-
-@keyframes riseAndBurst {
-    0% { transform: translateY(0) scale(0.8); opacity: 1; }
-    50% { transform: translateY(-80px) scale(1); opacity: 1; }
-    100% { transform: translateY(-120px) scale(1.2); opacity: 0; }
-}
-
-/* Top Bar */
-.topBar {
-    background-color: #474747;
-    height: 140px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    animation: gradientGlow 5s linear infinite;
-}
-
-.topBar::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
-    background-size: 300% 300%;
-    animation: gradientAnimation 5s linear infinite;
-}
-
-/* Navigation */
+/* ===== Animated Gradient Text for Your Name ===== */
 .h1 {
     font-size: 38px;
     background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
@@ -107,57 +94,124 @@ li {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+    animation: gradientAnimation 5s linear infinite; /* Matching the border animation */
+}
+
+.name-container {
+    margin-left: 20px; /* Adjust as needed */
+}
+
+.title-container {
+    margin-left: 20px; /* Adjust as needed */
+}
+
+/*Anim to bring stuff onto screen when page loads
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+animation: slideDown 0.8s ease-out;*/
+
+@keyframes riseAndBurst {
+    0% { transform: translateY(0) scale(0.8); opacity: 1; }
+    50% { transform: translateY(-80px) scale(1); opacity: 1; }
+    100% { transform: translateY(-120px) scale(1.2); opacity: 0; }
+}
+
+.bubble {
+    position: absolute;
+    bottom: 0;
+    width: 8px;
+    height: 8px;
+    z-index: -1;  /* Ensures the bubbles are behind other elements */
+    background: rgba(200, 200, 200, 0.7);
+    border-radius: 50%;
+    animation: riseAndBurst 3s linear infinite;
+}
+
+/* Generate multiple bubbles with different timings */
+.bubble:nth-child(1) { left: 10%; animation-duration: 3s; }
+.bubble:nth-child(2) { left: 25%; animation-duration: 2.5s; }
+.bubble:nth-child(3) { left: 40%; animation-duration: 3.2s; }
+.bubble:nth-child(4) { left: 55%; animation-duration: 2.8s; }
+.bubble:nth-child(5) { left: 70%; animation-duration: 3.5s; }
+.bubble:nth-child(6) { left: 85%; animation-duration: 2.6s; }
+
+.topBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    z-index: 1000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+    /* Static background */
+    background-color: #474747;
+
+    /* Matching glow effect */
+    animation: gradientGlow 5s linear infinite;
+
+    /*Banner animation*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background-color: #474747;
+}
+
+/* Pseudo-element for a smoothly animated border */
+.topBar::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px; /* Border thickness */
+    
+    /* Animated gradient */
+    background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
+    background-size: 300% 300%;
+    
+    /* Perfectly synced animation */
     animation: gradientAnimation 5s linear infinite;
-    margin-left: 20px;
 }
 
-.h2 {
-    font-weight: 300;
-    font-size: 17px;
-    color: white;
-    margin-top: -1%;
-    text-align: left;
-    margin-left: 20px;
+/* Shared gradient animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.h3 {
-    font-weight: 300;
-    font-size: 14px;
-    color: white;
-    margin-top: -1%;
-    text-align: left;
+
+/* Glowing box-shadow underneath */
+@keyframes gradientGlow {
+    0% { box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5); }
+    33% { box-shadow: 0px 5px 20px rgba(0, 255, 136, 0.5); }
+    66% { box-shadow: 0px 5px 20px rgba(255, 0, 136, 0.5); }
+    100% { box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5); }
 }
 
 .navigation ul {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centers items horizontally */
     padding: 0;
     list-style: none;
 }
 
-#nav-items {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 150px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0;
-    margin-top: -2%;
-    width: 50%;
-}
-
-.top-nav, .current {
+/* ===== Tab Titles with Matching Animation ===== */
+.top-nav {
     font-weight: bold;
     font-size: 20px;
     color: white;
     transition: transform 0.075s ease-in-out;
-    animation: gradientAnimation 5s linear infinite;
+    animation: gradientAnimation 5s linear infinite; /* Same animation as the name and picture */
 }
 
-.top-nav:hover, .current:hover {
+/* Tab hover effect */
+.top-nav:hover {
     color: transparent;
     background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
     background-size: 300% 300%;
@@ -166,23 +220,72 @@ li {
     transform: scale(1.1);
 }
 
+/* Style for the current tab (underline) */
 .current {
-    border-bottom: 1px solid #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    transition: transform 0.075s ease-in-out, border-bottom 0.075s ease-in-out; /* Add transition for border-bottom */
+    animation: gradientAnimation 5s linear infinite; /* Same animation as the name and picture */
+    border-bottom: 1px solid #ffffff; /* Default border */
     padding-bottom: 17px;
 }
 
+/* Tab hover effect */
 .current:hover {
-    border-bottom: 1px solid transparent;
+    color: transparent;
+    background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+    border-bottom: 1px solid transparent; /* Make the border transparent */
 }
 
-#buttons {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    float: right;
-    margin-top: -2.5%;
+#photo {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid transparent;
+    background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
+    background-size: 300% 300%;
+    animation: combinedAnimation 5s linear infinite, glowEffect 5s ease-in-out infinite;
+    top: 10px; /* Same value you used before */
+    border: 4px solid transparent; /* Keep the border in place...seems to do nothing */
 }
 
+/* Can  delete this?*/
+#me {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Glow Effect Matching Gradient */
+@keyframes glowEffect {
+    0% { box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5); }
+    33% { box-shadow: 0px 0px 20px rgba(0, 255, 136, 0.5); }
+    66% { box-shadow: 0px 0px 20px rgba(255, 0, 136, 0.5); }
+    100% { box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5); }
+}
+
+@keyframes combinedAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ===== Icons in the Top Right - Metallic Shine ===== */
 .button {
     font-size: 40px;
     margin-right: 20px;
@@ -209,117 +312,108 @@ li {
     border-radius: 5%;
     margin-top: 0.5%;
     gap: 7.5px;
-    border: 3px solid transparent;
+    
+    /* Metallic Gradient Border */
+    border: 3px solid transparent; /* Ensures the border is visible */
     border-image: linear-gradient(45deg, #696969, #aaaaaa, #696969) 1;
+    
+    /* Text Gradient Effect */
     background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    
+    /* Smooth Interaction */
     transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
 }
 
-/* Bubbles */
-.bubble {
-    position: absolute;
-    bottom: 0;
-    width: 8px;
-    height: 8px;
-    z-index: -1;
-    background: rgba(200, 200, 200, 0.7);
-    border-radius: 50%;
-    animation: riseAndBurst 3s linear infinite;
+/* Title text included in body */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: white;
+    background: url('./resources/texture.png'); /* Use the local image file */
+    background-size: auto 200%; /* Double the height to ensure smooth scrolling */
+    background-repeat: repeat; /* Repeat both horizontally and vertically */
+    background-position: 50% 0%; /* Starts from the top */
+    background-attachment: fixed; /* Keeps the background fixed */
+    animation: moveBackground 50s linear infinite; /* Smooth animation */
 }
 
-.bubble:nth-child(1) { left: 10%; animation-duration: 3s; }
-.bubble:nth-child(2) { left: 25%; animation-duration: 2.5s; }
-.bubble:nth-child(3) { left: 40%; animation-duration: 3.2s; }
-.bubble:nth-child(4) { left: 55%; animation-duration: 2.8s; }
-.bubble:nth-child(5) { left: 70%; animation-duration: 3.5s; }
-.bubble:nth-child(6) { left: 85%; animation-duration: 2.6s; }
-
-/* Homepage Sections */
-#bio {
-    text-align: left;
-    margin-top: 20px;
-    width: 100%;
+@keyframes moveBackground {
+    0% {
+        background-position: 50% 0%; /* Start at the top */
+    }
+    100% {
+        background-position: 50% -100%; /* Scroll up by the height of the image */
+    }
 }
 
-#bio-title, #career-history-title, #education-title, #strengths-title, #passions-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
-    background-size: 400% 400%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    animation: gradientAnimation 10s ease infinite;
-    transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
-    transform: scale(1.1);
-    cursor: default;
-    filter: brightness(1.65);
-}
-
-#bio-title a, #career-history-title a, #education-title a, #strengths-title a, #passions-title a {
+a {
     text-decoration: none;
     color: inherit;
+    font-size: inherit;
 }
 
-#career-history {
-    margin-top: 7%;
-    background-color: #212121;
-    width: 40%;
-    padding: 10px;
-    padding-left: 25px;
-    padding-top: 5px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+li {
+    color: white;
 }
 
-#education {
-    margin-top: 7%;
-    background-color: #212121;
-    width: 40%;
-    padding: 10px;
-    padding-left: 25px;
-    padding-top: 5px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+#nav-items {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;    
+    justify-content: center; /* Keeps items centered */
+    gap: 150px; /* Adjust spacing between tabs */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Ensures the middle tab stays centered */
+    padding: 0;
+    margin-top: -2%;
+    width: 50%;
 }
 
-#strengths {
+#buttons {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
     float: right;
-    width: 40%;
-    margin-top: -82%;
-    margin-bottom: 5%;
+    margin-top: -2.5%;
 }
 
-#passions {
+.arrow {
+    font-size: 30px;
     float: right;
-    width: 40%;
-    margin-top: -42%;
-    margin-bottom: 5%;
+    margin-right: 4%;
+    margin-top: -11%;
 }
 
-#photo {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid transparent;
-    background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
-    background-size: 300% 300%;
-    animation: combinedAnimation 5s linear infinite, glowEffect 5s ease-in-out infinite;
-    top: 10px;
+.h2 {
+    font-weight: 300;
+    font-size: 17px;
+    color: white;
+    margin-top: -1%;
+    text-align: left;
 }
 
-#me {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.h3 {
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+    margin-top: -1%;
+    text-align: left;
+}
+
+#about {
+    position: absolute;
+    margin-left: 22%;
+    font-size: 19px;
+    width: 65%;
+}
+
+#aboutMe {
+    color: white;
 }
 
 .textbox {
@@ -352,16 +446,43 @@ li {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-#about {
-    position: absolute;
-    margin-left: 22%;
-    font-size: 19px;
-    width: 65%;
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
-#aboutMe {
-    color: white;
+body {
+    display: flex;
+    flex-direction: column;
 }
+
+main {
+    flex: 1;
+}
+
+#footer {
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.47);
+    font-size: 8px;
+    margin-top: 20px;
+}
+
+.topBar {
+    background-color: #474747;
+    height: 140px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+main {
+    padding-top: 175px;
+}
+
+/*Homepage Sections*/
 
 #bioSection {
     display: flex;
@@ -379,7 +500,7 @@ li {
     background-color: #191919;
     margin-left: 4%;
     margin-right: 4%;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounds the corners of the section box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -399,9 +520,12 @@ li {
     background-color: #191919;
     margin-left: 4%;
     margin-right: 4%;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounds the corners of the section box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+
+
 
 #articleSection {
     display: flex;
@@ -419,7 +543,7 @@ li {
     margin-left: 4%;
     margin-right: 4%;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounds the corners of the section box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -431,29 +555,36 @@ li {
 
 .article {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
+    flex-direction: column; /* Stack title above image */
+    align-items: center; /* Center-align items horizontally */
+    width: 300px; /* Give each column a fixed width */
     margin-left: 15px;
     margin-right: 15px;
 }
 
+/* .article:first-child {
+    margin-left: 40px;*/ /* Add margin to the left of the first article */
+/*}*/
+
 .title {
-    text-align: center;
-    width: 100%;
+    text-align: center; /* Center-align the text inside the title */
+    width: 100%; /* Make title take full width of the article container */
 }
 
 .image {
-    width: 100%;
+    width: 100%; /* Make image take full width of the article container */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center-align the image horizontally */
 }
 
 .article-image {
-    width: 240px;
-    height: 240px;
-    margin-top: 10px;
+    width: 240px; /* Fixed width for the image */
+    height: 240px; /* Fixed height for the image */
+    margin-top: 10px; /* Space between title and image */
 }
+
+
+
 
 #sections {
     display: flex;
@@ -471,7 +602,7 @@ li {
     background-color: #191919;
     margin-left: 4%;
     margin-right: 0%;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounds the corners of the section box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -483,7 +614,7 @@ li {
     background-color: #191919;
     margin-left: 0%;
     margin-right: 4%;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounds the corners of the section box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -518,15 +649,28 @@ li {
     margin-right: 4%;
 }
 
-/* The Vault Page */
-/* Replace all .vault width/margin rules with: */
-.vault {
-    width: clamp(300px, 45vw, 620px);
-    margin: 20px auto;
-}
+
+
+/*The Vault Page*/
 
 #vault {
-    justify-content: space-around; /* Better than space-between */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.vault {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 620px;
+    height: 556px;
+    background-color: #191919;
+    margin-left: 8%;
+    margin-right: 8%;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .vaultRow1 {
@@ -537,7 +681,7 @@ li {
     background-color: #191919;
     margin-left: 8%;
     margin-right: 8%;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounds the corners of the section box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -545,23 +689,33 @@ li {
     -webkit-filter: brightness(120%) contrast(90%);
 }
 
-.vaultH1, .gameTitle {
+.vaultH1, .gameTitle, 
+#bio-title, #career-history-title, 
+#education-title, #strengths-title, #passions-title {
     font-weight: 550;
     font-size: 27px;
-    text-align: center;
+    text-align: center; /* Keeps titles centered */
+    
+    /* Gradient Animation */
     background-image: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
     background-size: 300% 300%;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: gradientAnimation 5s ease infinite;
+
+    /* Synchronized Animation */
+    animation: gradientAnimation 5s ease infinite; /* Unified timing */
+    
+    /* Visual Effects */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
     transform: scale(1.05);
     filter: brightness(1.5);
 }
 
-.vault:hover .vaultH1, .vault:hover .gameTitle {
+/* Change to white on hover */
+.vault:hover .vaultH1, 
+.vault:hover .gameTitle {
     background: none;
     -webkit-background-clip: unset;
     color: white;
@@ -586,8 +740,8 @@ li {
 .videoContainer {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
+    aspect-ratio: 16 / 9; /* Ensures the correct ratio */
+    overflow: hidden; /* Keeps iframe within the rounded border */
 }
 
 .videoContainer iframe {
@@ -595,7 +749,11 @@ li {
     height: 100%;
 }
 
+/* War Room News */
+
 /* Waking Dad Page */
+
+/* Buttons Row */
 .buttons-row {
     display: flex;
     justify-content: space-between;
@@ -649,6 +807,7 @@ li {
     filter: brightness(1.1);
 }
 
+/* Play Now Button */
 .button-container {
     display: flex;
     justify-content: flex-end;
@@ -687,6 +846,7 @@ li {
     filter: brightness(1.1);
 }
 
+/* Video and Info Container */
 .video-info-container {
     display: flex;
     flex-wrap: wrap;
@@ -724,6 +884,7 @@ li {
     line-height: 1.6;
 }
 
+/* Screenshots Section */
 .vaultIMG {
     display: flex;
     flex-wrap: wrap;
@@ -748,31 +909,31 @@ li {
 
 .vaultIMG .IMG:hover {
     transform: scale(1.05);
-    cursor: pointer;
+    cursor: pointer; /* Indicates clickability */
 }
 
 .fullscreen-overlay {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 2000;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+    z-index: 2000; /* Above topBar (z-index: 1000) */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
+    overflow: auto; /* Handle large images */
     margin: 0;
     padding: 0;
 }
 
 .fullscreen-image {
     max-width: 90%;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 5px;
+    max-height: 90vh; /* Fit within viewport height */
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 5px; /* Match screenshot style */
 }
 
 .nav-arrow {
@@ -780,25 +941,26 @@ li {
     top: 50%;
     transform: translateY(-50%);
     font-size: 40px;
-    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0);
+    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0); /* Matches .button */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    transition: transform 0.075s ease-in-out;
-    z-index: 2100;
+    transition: transform 0.075s ease-in-out; /* Matches .button */
+    z-index: 2100; /* Above overlay */
 }
 
 .nav-arrow:hover {
-    transform: translateY(-50%) scale(1.2);
+    transform: translateY(-50%) scale(1.2); /* Scale only, keep gradient */
+    cursor: pointer;
 }
 
 .nav-arrow-left {
-    left: -50px;
+    left: -50px; /* 10px left of image */
 }
 
 .nav-arrow-right {
-    right: -50px;
+    right: -50px; /* 10px right of image */
 }
 
 .close-overlay {
@@ -806,397 +968,15 @@ li {
     top: 20px;
     left: 20px;
     font-size: 40px;
-    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0);
+    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0); /* Matches .button */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    transition: transform 0.075s ease-in-out;
+    transition: transform 0.075s ease-in-out; /* Matches .button */
 }
 
 .close-overlay:hover {
-    transform: scale(1.2);
-}
-
-.arrow {
-    font-size: 30px;
-    float: right;
-    margin-right: 4%;
-    margin-top: -11%;
-}
-
-#footer {
-    width: 100%;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.47);
-    font-size: 8px;
-    margin-top: 20px;
-}
-
-/* Media Queries for Device-Friendliness */
-/* Tablet (481px–768px) */
-@media (max-width: 768px) {
-    .topBar {
-        height: 120px;
-    }
-
-    main {
-        padding-top: 155px;
-    }
-
-    .h1 {
-        font-size: 32px;
-        margin-left: 15px;
-    }
-
-    .h2 {
-        font-size: 15px;
-        margin-left: 15px;
-    }
-
-    #nav-items {
-        gap: 50px;
-        width: 80%;
-        margin-top: -3%;
-    }
-
-    .top-nav, .current {
-        font-size: 18px;
-        padding-bottom: 10px;
-    }
-
-    #buttons {
-        margin-top: -3.5%;
-        gap: 10px;
-    }
-
-    .button {
-        font-size: 32px;
-        margin-right: 15px;
-    }
-
-    #CV {
-        font-size: 18px;
-        padding: 4px 6px;
-    }
-
-    .buttons-row {
-        margin: 15px 30px;
-    }
-
-    .backButton {
-        padding: 6px 12px;
-    }
-
-    .backArrow {
-        font-size: 20px;
-        margin-right: 8px;
-    }
-
-    .back {
-        font-size: 14px;
-    }
-
-    .play-button {
-        padding: 6px 12px;
-        font-size: 14px;
-    }
-
-    .video-info-container {
-        flex-direction: column;
-        margin: 20px 30px;
-        gap: 15px;
-    }
-
-    .projectVid, .projectINFO {
-        width: 100%;
-        min-width: 0;
-        max-width: none;
-    }
-
-    .vaultIMG {
-        margin: 20px 30px;
-        padding: 15px;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .vaultIMG .IMG {
-        width: calc(48% - 10px);
-        margin: 5px;
-    }
-
-    .nav-arrow {
-        font-size: 32px;
-    }
-
-    .nav-arrow-left {
-        left: -40px;
-    }
-
-    .nav-arrow-right {
-        right: -40px;
-    }
-
-    .close-overlay {
-        font-size: 32px;
-        top: 15px;
-        left: 15px;
-    }
-
-    #bio {
-        margin-top: 15px;
-    }
-
-    #bio-title, #career-history-title, #education-title, #strengths-title, #passions-title {
-        font-size: 20px;
-    }
-
-    #career-history, #education {
-        width: 90%;
-        margin-top: 5%;
-        padding: 8px 15px;
-    }
-
-    #strengths, #passions {
-        float: none;
-        width: 90%;
-        margin-top: 5%;
-        margin-bottom: 3%;
-    }
-
-    #photo {
-        width: 180px;
-        height: 180px;
-        top: 5px;
-    }
-
-    #bioSection, #designSection, #articleSection, #sections, #vault {
-        justify-content: center;
-    }
-
-    .bioSection, .designSection, .articleSection {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        height: auto;
-    }
-
-    .lSections, .rSections, .vault, .vaultRow1 {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        height: auto;
-    }
-
-    .article {
-        width: 45%;
-        margin: 10px;
-    }
-
-    .article-image {
-        width: 100%;
-        height: auto;
-        max-width: 200px;
-    }
-
-    .vaultINFO {
-        float: none;
-        width: 100%;
-        margin-top: 10px;
-        height: auto;
-    }
-
-    .textbox h3 {
-        font-size: 20px;
-    }
-
-    .textbox p {
-        font-size: 14px;
-    }
-
-    .bubble {
-        width: 6px;
-        height: 6px;
-    }
-
-    @keyframes riseAndBurst {
-        0% { transform: translateY(0) scale(0.6); opacity: 1; }
-        50% { transform: translateY(-50px) scale(0.8); opacity: 1; }
-        100% { transform: translateY(-80px) scale(1); opacity: 0; }
-    }
-}
-
-/* Mobile (≤480px) */
-@media (max-width: 480px) {
-    .topBar {
-        height: 100px;
-    }
-
-    main {
-        padding-top: 135px;
-    }
-
-    .h1 {
-        font-size: 24px;
-        margin-left: 10px;
-    }
-
-    .h2 {
-        font-size: 13px;
-        margin-left: 10px;
-    }
-
-    #nav-items {
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-        margin-top: -5%;
-        align-items: center;
-    }
-
-    .top-nav, .current {
-        font-size: 16px;
-        padding-bottom: 8px;
-    }
-
-    #buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        margin-top: -5%;
-        gap: 5px;
-    }
-
-    .button {
-        font-size: 24px;
-        margin-right: 10px;
-    }
-
-    #CV {
-        font-size: 16px;
-        padding: 3px 5px;
-    }
-
-    .buttons-row {
-        margin: 10px 15px;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .backButton {
-        padding: 5px 10px;
-    }
-
-    .backArrow {
-        font-size: 18px;
-        margin-right: 6px;
-    }
-
-    .back {
-        font-size: 12px;
-    }
-
-    .play-button {
-        padding: 5px 10px;
-        font-size: 12px;
-    }
-
-    .video-info-container {
-        margin: 15px 15px;
-        gap: 10px;
-    }
-
-    .vaultIMG {
-        margin: 15px 15px;
-        padding: 10px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .vaultIMG .IMG {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    .nav-arrow {
-        font-size: 24px;
-    }
-
-    .nav-arrow-left {
-        left: -30px;
-    }
-
-    .nav-arrow-right {
-        right: -30px;
-    }
-
-    .close-overlay {
-        font-size: 24px;
-        top: 10px;
-        left: 10px;
-    }
-
-    #bio {
-        margin-top: 10px;
-    }
-
-    #bio-title, #career-history-title, #education-title, #strengths-title, #passions-title {
-        font-size: 18px;
-    }
-
-    #career-history, #education, #strengths, #passions {
-        width: 94%;
-        margin-top: 3%;
-        padding: 5px 10px;
-    }
-
-    #photo {
-        width: 140px;
-        height: 140px;
-        top: 0;
-    }
-
-    .bioSection, .designSection, .articleSection, .lSections, .rSections, .vault, .vaultRow1 {
-        width: 94%;
-        margin-left: 3%;
-        margin-right: 3%;
-        padding: 10px;
-    }
-
-    .article {
-        width: 100%;
-        margin: 5px;
-    }
-
-    .article-image {
-        max-width: 180px;
-    }
-
-    .vaultH1, .gameTitle {
-        font-size: 22px;
-    }
-
-    .vaultTxt, .projectINFO .vaultTxt {
-        font-size: 14px;
-    }
-
-    .textbox h3 {
-        font-size: 18px;
-    }
-
-    .textbox p {
-        font-size: 12px;
-    }
-
-    .bubble {
-        width: 5px;
-        height: 5px;
-    }
-
-    @keyframes riseAndBurst {
-        0% { transform: translateY(0) scale(0.5); opacity: 1; }
-        50% { transform: translateY(-40px) scale(0.7); opacity: 1; }
-        100% { transform: translateY(-60px) scale(0.9); opacity: 0; }
-    }
+    transform: scale(1.2); /* Scale only, keep gradient */
+    cursor: pointer;
 }
