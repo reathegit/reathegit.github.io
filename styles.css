@@ -1,3 +1,5 @@
+/* unsure if .textbox .experience and .vaultInfo do anything */
+
 /* Adjust to user device */
 
 @media (max-width: 768px) {
@@ -265,10 +267,10 @@ animation: slideDown 0.8s ease-out;*/
 
 /* Glow Effect Matching Gradient */
 @keyframes glowEffect {
-    0% { box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5); }
-    33% { box-shadow: 0px 5px 20px rgba(0, 255, 136, 0.5); }
-    66% { box-shadow: 0px 5px 20px rgba(255, 0, 136, 0.5); }
-    100% { box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5); }
+    0% { box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5); }
+    33% { box-shadow: 0px 0px 20px rgba(0, 255, 136, 0.5); }
+    66% { box-shadow: 0px 0px 20px rgba(255, 0, 136, 0.5); }
+    100% { box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5); }
 }
 
 @keyframes combinedAnimation {
@@ -897,7 +899,7 @@ main {
 
 .vaultIMG .IMG {
     display: block;
-    width: calc(24.5% - 20px); /* Each image takes 25% of container width minus 20px for margins */
+    width: calc(24% - 20px); /* Each image takes 25% of container width minus 20px for margins */
     margin: 0 10px; /* 10px margin on left and right */
     height: auto;
     border-radius: 5px;
