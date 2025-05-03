@@ -52,7 +52,8 @@
     padding: 10px;
     padding-left: 25px;
     padding-top: 5px;
-    border-radius: 3px;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Education - bottom-left */
@@ -63,7 +64,8 @@
     padding: 10px;
     padding-left: 25px;
     padding-top: 5px;
-    border-radius: 3px;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Strengths - top-right */
@@ -496,6 +498,8 @@ main {
     background-color: #191919;
     margin-left: 4%;
     margin-right: 4%;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 #designSection {
@@ -514,6 +518,8 @@ main {
     background-color: #191919;
     margin-left: 4%;
     margin-right: 4%;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -535,6 +541,8 @@ main {
     margin-left: 4%;
     margin-right: 4%;
     box-sizing: border-box;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .content {
@@ -592,6 +600,8 @@ main {
     background-color: #191919;
     margin-left: 4%;
     margin-right: 0%;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .rSections {
@@ -602,6 +612,8 @@ main {
     background-color: #191919;
     margin-left: 0%;
     margin-right: 4%;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nSections {
@@ -655,6 +667,8 @@ main {
     background-color: #191919;
     margin-left: 8%;
     margin-right: 8%;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .vaultRow1 {
@@ -665,6 +679,8 @@ main {
     background-color: #191919;
     margin-left: 8%;
     margin-right: 8%;
+    border-radius: 5px; /* Rounds the corners of the section box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .vault:hover .video {
@@ -881,7 +897,7 @@ main {
 
 .vaultIMG .IMG {
     display: block;
-    width: calc(24% - 20px); /* Each image takes 25% of container width minus 20px for margins */
+    width: calc(24.5% - 20px); /* Each image takes 25% of container width minus 20px for margins */
     margin: 0 10px; /* 10px margin on left and right */
     height: auto;
     border-radius: 5px;
