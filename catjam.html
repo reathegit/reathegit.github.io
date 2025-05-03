@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Cat Jam, a rhythm game designed by Reason Delafét featuring grooving felines and rotating notes.">
+        <meta name="keywords" content="Cat Jam, rhythm game, music game, Reason Delafét, game design">
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <link href="animation.css" type="text/css" rel="stylesheet">
+        <link href="mediaqueries.css" type="text/css" rel="stylesheet">
+        <title>Cat Jam - Reason Delafét Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+        <script src="https://kit.fontawesome.com/5da9ce64bc.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="topBar">
+            <h1 class="h1 name-container" id="myName">
+                <a href="index.html">Reason Delafét</a>
+            </h1>
+            <h2 class="h2 title-container" id="Uni">Level Designer and Writer</h2>
+            <nav id="nav" class="navigation">
+                <ul id="nav-items">
+                    <li class="top-nav"><a href="https://reathegit.github.io/index.html">Player One</a></li>
+                    <li class="top-nav"><a href="https://reathegit.github.io/thevault.html" class="current">The Vault</a></li>
+                    <li class="top-nav"><a href="https://reathegit.github.io/warroom.html">War Room</a></li>
+                </ul>
+                <ul id="buttons">
+                    <a href="https://www.linkedin.com/in/reasondelafetgame/" target="_blank" rel="noopener noreferrer"><li class="button fa-brands fa-linkedin" id="linkedin"></li></a>
+                    <a href="https://x.com/ReasonDelafet" target="_blank" rel="noopener noreferrer"><li class="button fa-brands fa-x-twitter" id="x"></li></a>
+                    <a href="https://reasondelafet.wordpress.com/" target="_blank" rel="noopener noreferrer"><li class="button fa-brands fa-wordpress" id="wordpress"></li></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><li class="button fa-brands fa-itch-io" id="itchio"></li></a>
+                    <a href="mailto:reasondelafet@gmail.com"><li class="button fa-solid fa-envelope" id="email"></li></a>
+                    <li class="button fa-solid fa-arrow-down" id="CV">CV</li>
+                </ul>
+            </nav>
+            <div class="bubble-container">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Back Button Only -->
+            <div class="buttons-row">
+                <section class="backButton">
+                    <a href="thevault.html"><i class="backArrow fa-solid fa-angle-left"></i><h1 class="back">Back</h1></a>
+                </section>
+            </div>
+
+            <!-- Video and Info Sections -->
+            <div class="video-info-container">
+                <section id="catJamVID" class="projectVid">
+                    <iframe class="vid" width="560" height="315"
+                        src="https://www.youtube.com/embed/GCJkeIeW44g?autoplay=1&mute=1" 
+                        title="Cat Jam gameplay preview" frameborder="0" 
+                        allow="autoplay; encrypted-media" allowfullscreen muted playsinline
+                        aria-label="Cat Jam gameplay preview video">
+                    </iframe>
+                </section>
+                <section id="catJamINFO" class="projectINFO">
+                    <h1 class="vaultH1">Cat Jam - Rhythm Game</h1>
+                    <p class="vaultTxt">Built in <b>Unity Engine</b>, Cat Jam is a <b>non-traditional rhythm game</b> where notes gyrate and pulse to LoFi beats instead of scrolling linearly. Players control a dancing cat hitting notes to the beat in a vibrant, neon-drenched world.<br><br>
+                                       As <b>Design Lead</b>, I reinvented standard rhythm game mechanics by implementing rotating note paths, dynamic hit windows, and a scoring system that rewards flow-state combos. The art style merges vaporwave aesthetics with playful feline animations.<br><br>
+                                       Developed during a <b>month-long passion project</b>, with custom shaders for the note effects and hand-drawn cat sprites animated in Spine2D. The soundtrack features original LoFi tracks composed in FL Studio.</p>
+                </section>
+            </div>
+
+            <!-- Neutral Screenshots (CJ1-CJ4) -->
+            <section class="vaultIMG">
+                <img id="catJam1" class="IMG" src="resources/CJ1.png" alt="Cat Jam Screenshot 1">
+                <img id="catJam2" class="IMG" src="resources/CJ2.png" alt="Cat Jam Screenshot 2">
+                <img id="catJam3" class="IMG" src="resources/CJ3.png" alt="Cat Jam Screenshot 3">
+                <img id="catJam4" class="IMG" src="resources/CJ4.png" alt="Cat Jam Screenshot 4">
+            </section>
+            
+            <!-- Image Overlay Script (Preserved) -->
+            <script>
+                const images = document.querySelectorAll('.vaultIMG .IMG');
+                const imageSources = Array.from(images).map(img => img.src);
+
+                images.forEach((image, index) => {
+                    image.addEventListener('click', () => {
+                        const overlay = document.createElement('div');
+                        overlay.id = 'fullscreen-overlay';
+                        overlay.className = 'fullscreen-overlay';
+
+                        const closeButton = document.createElement('span');
+                        closeButton.id = 'close-overlay';
+                        closeButton.className = 'close-overlay';
+                        closeButton.innerHTML = '×';
+
+                        const leftArrow = document.createElement('span');
+                        leftArrow.className = 'nav-arrow nav-arrow-left';
+                        leftArrow.innerHTML = '◄';
+
+                        const rightArrow = document.createElement('span');
+                        rightArrow.className = 'nav-arrow nav-arrow-right';
+                        rightArrow.innerHTML = '►';
+
+                        const fullscreenImage = document.createElement('img');
+                        fullscreenImage.id = 'fullscreen-image';
+                        fullscreenImage.className = 'fullscreen-image';
+                        fullscreenImage.src = image.src;
+                        fullscreenImage.alt = 'Full-screen screenshot';
+
+                        overlay.appendChild(closeButton);
+                        overlay.appendChild(leftArrow);
+                        overlay.appendChild(rightArrow);
+                        overlay.appendChild(fullscreenImage);
+                        document.body.appendChild(overlay);
+
+                        let currentIndex = index;
+
+                        const updateImage = () => {
+                            fullscreenImage.src = imageSources[currentIndex];
+                        };
+
+                        leftArrow.addEventListener('click', () => {
+                            currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+                            updateImage();
+                        });
+
+                        rightArrow.addEventListener('click', () => {
+                            currentIndex = (currentIndex + 1) % imageSources.length;
+                            updateImage();
+                        });
+
+                        const handleKeydown = (e) => {
+                            if (e.key === 'ArrowLeft') {
+                                currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+                                updateImage();
+                            } else if (e.key === 'ArrowRight') {
+                                currentIndex = (currentIndex + 1) % imageSources.length;
+                                updateImage();
+                            }
+                        };
+                        document.addEventListener('keydown', handleKeydown);
+
+                        closeButton.addEventListener('click', () => {
+                            document.body.removeChild(overlay);
+                            document.removeEventListener('keydown', handleKeydown);
+                        });
+
+                        overlay.addEventListener('click', (e) => {
+                            if (e.target === overlay) {
+                                document.body.removeChild(overlay);
+                                document.removeEventListener('keydown', handleKeydown);
+                            }
+                        });
+                    });
+                });
+            </script>
+        </main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+
+        <footer>
+            <p id="footer">Designed and built by Reason Delafét.<br>
+            All rights reserved. © <br><br></p>
+        </footer>
+    </body>
+</html>

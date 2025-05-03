@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Koala Bi'niss, an animated short film directed by Reason Delafét featuring a koala mafia dealing with a poisoned eucalyptus crisis.">
+        <meta name="keywords" content="Koala Bi'niss, animation, 3D short film, Reason Delafét, director">
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <link href="animation.css" type="text/css" rel="stylesheet">
+        <link href="mediaqueries.css" type="text/css" rel="stylesheet">
+        <title>Koala Bi'niss - Reason Delafét Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+        <script src="https://kit.fontawesome.com/5da9ce64bc.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="topBar">
+            <h1 class="h1 name-container" id="myName">
+                <a href="index.html">Reason Delafét</a>
+            </h1>
+            <h2 class="h2 title-container" id="Uni">Level Designer and Writer</h2>
+            <nav id="nav" class="navigation">
+                <ul id="nav-items">
+                    <li class="top-nav"><a href="https://reathegit.github.io/index.html">Player One</a></li>
+                    <li class="top-nav"><a href="https://reathegit.github.io/thevault.html" class="current">The Vault</a></li>
+                    <li class="top-nav"><a href="https://reathegit.github.io/warroom.html">War Room</a></li>
+                </ul>
+                <ul id="buttons">
+                    <a href="https://www.linkedin.com/in/reasondelafetgame/" target="_blank" rel="noopener noreferrer"><li class="button fa-brands fa-linkedin" id="linkedin"></li></a>
+                    <a href="https://x.com/ReasonDelafet" target="_blank" rel="noopener noreferrer"><li class="button fa-brands fa-x-twitter" id="x"></li></a>
+                    <a href="https://reasondelafet.wordpress.com/" target="_blank" rel="noopener noreferrer"><li class="button fa-brands fa-wordpress" id="wordpress"></li></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><li class="button fa-brands fa-itch-io" id="itchio"></li></a>
+                    <a href="mailto:reasondelafet@gmail.com"><li class="button fa-solid fa-envelope" id="email"></li></a>
+                    <li class="button fa-solid fa-arrow-down" id="CV">CV</li>
+                </ul>
+            </nav>
+            <div class="bubble-container">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Back Button Only -->
+            <div class="buttons-row">
+                <section class="backButton">
+                    <a href="thevault.html"><i class="backArrow fa-solid fa-angle-left"></i><h1 class="back">Back</h1></a>
+                </section>
+            </div>
+
+            <!-- Video and Info Sections -->
+            <div class="video-info-container">
+                <section id="koalaVID" class="projectVid">
+                    <iframe class="vid" width="560" height="315"
+                        src="https://www.youtube.com/embed/oa0amtkOO2E?autoplay=1&mute=1" 
+                        title="Koala Bi'niss animated short" frameborder="0" 
+                        allow="autoplay; encrypted-media" allowfullscreen muted playsinline
+                        aria-label="Koala Bi'niss animated short film">
+                    </iframe>
+                </section>
+                <section id="koalaINFO" class="projectINFO">
+                    <h1 class="vaultH1">Koala Bi'niss - Animated Short Film</h1>
+                    <p class="vaultTxt">A <b>3D animated dark comedy</b> following a koala mafia dealing with a poisoned eucalyptus crisis. Created in <b>Blender</b>, this project showcases character animation, cinematic storytelling, and environmental design.<br><br>
+                                       As <b>Director</b>, I led all aspects of production including:<br>
+                                       • Retopologizing and rigging koala models<br>
+                                       • Scene composition and lighting<br>
+                                       • Camera choreography<br>
+                                       • Sound design and voice casting<br><br>
+                                       The 2-minute short was a <b>solo passion project</b> over 6 months, blending gangster film tropes with absurdist animal humor. Featured at IndieAnim Fest 2023.</p>
+                </section>
+            </div>
+
+            <!-- Production Stills (KB1-KB4) -->
+            <section class="vaultIMG">
+                <img id="koala1" class="IMG" src="resources/KB1.png" alt="Koala Bi'niss still 1">
+                <img id="koala2" class="IMG" src="resources/KB2.png" alt="Koala Bi'niss still 2">
+                <img id="koala3" class="IMG" src="resources/KB3.png" alt="Koala Bi'niss still 3">
+                <img id="koala4" class="IMG" src="resources/KB4.png" alt="Koala Bi'niss still 4">
+            </section>
+            
+            <!-- Image Overlay Script -->
+            <script>
+                const images = document.querySelectorAll('.vaultIMG .IMG');
+                const imageSources = Array.from(images).map(img => img.src);
+
+                images.forEach((image, index) => {
+                    image.addEventListener('click', () => {
+                        const overlay = document.createElement('div');
+                        overlay.id = 'fullscreen-overlay';
+                        overlay.className = 'fullscreen-overlay';
+
+                        const closeButton = document.createElement('span');
+                        closeButton.id = 'close-overlay';
+                        closeButton.className = 'close-overlay';
+                        closeButton.innerHTML = '×';
+
+                        const leftArrow = document.createElement('span');
+                        leftArrow.className = 'nav-arrow nav-arrow-left';
+                        leftArrow.innerHTML = '◄';
+
+                        const rightArrow = document.createElement('span');
+                        rightArrow.className = 'nav-arrow nav-arrow-right';
+                        rightArrow.innerHTML = '►';
+
+                        const fullscreenImage = document.createElement('img');
+                        fullscreenImage.id = 'fullscreen-image';
+                        fullscreenImage.className = 'fullscreen-image';
+                        fullscreenImage.src = image.src;
+                        fullscreenImage.alt = 'Full-screen production still';
+
+                        overlay.appendChild(closeButton);
+                        overlay.appendChild(leftArrow);
+                        overlay.appendChild(rightArrow);
+                        overlay.appendChild(fullscreenImage);
+                        document.body.appendChild(overlay);
+
+                        let currentIndex = index;
+
+                        const updateImage = () => {
+                            fullscreenImage.src = imageSources[currentIndex];
+                        };
+
+                        leftArrow.addEventListener('click', () => {
+                            currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+                            updateImage();
+                        });
+
+                        rightArrow.addEventListener('click', () => {
+                            currentIndex = (currentIndex + 1) % imageSources.length;
+                            updateImage();
+                        });
+
+                        const handleKeydown = (e) => {
+                            if (e.key === 'ArrowLeft') {
+                                currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+                                updateImage();
+                            } else if (e.key === 'ArrowRight') {
+                                currentIndex = (currentIndex + 1) % imageSources.length;
+                                updateImage();
+                            }
+                        };
+                        document.addEventListener('keydown', handleKeydown);
+
+                        closeButton.addEventListener('click', () => {
+                            document.body.removeChild(overlay);
+                            document.removeEventListener('keydown', handleKeydown);
+                        });
+
+                        overlay.addEventListener('click', (e) => {
+                            if (e.target === overlay) {
+                                document.body.removeChild(overlay);
+                                document.removeEventListener('keydown', handleKeydown);
+                            }
+                        });
+                    });
+                });
+            </script>
+        </main>
+
+        <footer>
+            <p id="footer">Designed and built by Reason Delafét.<br>
+            All rights reserved. © <br><br></p>
+        </footer>
+    </body>
+</html>
