@@ -870,7 +870,7 @@ main {
 .vaultIMG {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     margin: 30px 60px;
     padding: 20px;
@@ -881,7 +881,8 @@ main {
 
 .vaultIMG .IMG {
     display: block;
-    max-width: 300px;
+    width: calc(25% - 20px); /* Each image takes 25% of container width minus 20px for margins */
+    margin: 0 10px; /* 10px margin on left and right */
     height: auto;
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
