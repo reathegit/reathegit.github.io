@@ -955,6 +955,14 @@ main {
     cursor: pointer;
 }
 
+.nav-arrow-left {
+    left: -50px; /* 10px left of image */
+}
+
+.nav-arrow-right {
+    right: -50px; /* 10px right of image */
+}
+
 .close-overlay {
     position: absolute;
     top: 20px;
