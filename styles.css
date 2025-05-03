@@ -519,24 +519,14 @@ li {
 }
 
 /* The Vault Page */
-#vault {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
+/* Replace all .vault width/margin rules with: */
+.vault {
+    width: clamp(300px, 45vw, 620px);
+    margin: 20px auto;
 }
 
-.vault {
-    margin-top: 30px;
-    margin-bottom: 40px;
-    width: 620px;
-    height: 556px;
-    background-color: #191919;
-    margin-left: 8%;
-    margin-right: 8%;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+#vault {
+    justify-content: space-around; /* Better than space-between */
 }
 
 .vaultRow1 {
