@@ -928,11 +928,11 @@ main {
 }
 
 .fullscreen-image {
-    max-width: 95vw;  /* Increased from 90% to 95% of viewport width */
-    max-height: 95vh; /* Increased from 90% to 95% of viewport height */
-    object-fit: contain;
-    border-radius: 5px;
-    cursor: zoom-out; /* Shows user they can click to exit */
+    max-width: 180%; /* Doubled from 90% */
+    max-height: 180vh; /* Doubled from 90vh */
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 5px; /* Match screenshot style */
+    cursor: default; /* Set to default cursor */
 }
 
 .nav-arrow {
