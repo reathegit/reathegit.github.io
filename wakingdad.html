@@ -82,50 +82,51 @@
                 <img id="wakingDad4" class="IMG" src="resources/WD4.png" alt="Waking Dad gameplay screenshot 4">
             </section>
             
-            <!-- Full-screen overlay -->
-            <div id="fullscreen-overlay" class="fullscreen-overlay">
-                <span id="close-overlay" class="close-overlay">&times;</span>
-                <img id="fullscreen-image" class="fullscreen-image" src="" alt="Full-screen screenshot">
-            </div>
-            
             <script>
                 const images = document.querySelectorAll('.vaultIMG .IMG');
-                const overlay = document.getElementById('fullscreen-overlay');
-                const fullscreenImage = document.getElementById('fullscreen-image');
-                const closeButton = document.getElementById('close-overlay');
-            
-                // Hide overlay on page load
-                window.addEventListener('load', () => {
-                    overlay.style.display = 'none';
-                    fullscreenImage.src = ''; // Ensure no image is set
-                });
-            
-                // Add click event to images
+
                 images.forEach(image => {
                     image.addEventListener('click', () => {
+                        // Create overlay
+                        const overlay = document.createElement('div');
+                        overlay.id = 'fullscreen-overlay';
+                        overlay.className = 'fullscreen-overlay';
+
+                        // Create close button
+                        const closeButton = document.createElement('span');
+                        closeButton.id = 'close-overlay';
+                        closeButton.className = 'close-overlay';
+                        closeButton.innerHTML = '×';
+
+                        // Create full-screen image
+                        const fullscreenImage = document.createElement('img');
+                        fullscreenImage.id = 'fullscreen-image';
+                        fullscreenImage.className = 'fullscreen-image';
                         fullscreenImage.src = image.src;
-                        overlay.style.display = 'flex';
+                        fullscreenImage.alt = 'Full-screen screenshot';
+
+                        // Append elements
+                        overlay.appendChild(closeButton);
+                        overlay.appendChild(fullscreenImage);
+                        document.body.appendChild(overlay);
+
+                        // Close overlay when clicking close button
+                        closeButton.addEventListener('click', () => {
+                            document.body.removeChild(overlay);
+                        });
+
+                        // Close overlay when clicking outside image
+                        overlay.addEventListener('click', (e) => {
+                            if (e.target === overlay) {
+                                document.body.removeChild(overlay);
+                            }
+                        });
                     });
-                });
-            
-                // Close overlay when clicking the close button
-                closeButton.addEventListener('click', () => {
-                    overlay.style.display = 'none';
-                    fullscreenImage.src = ''; // Clear image
-                });
-            
-                // Close overlay when clicking outside the image
-                overlay.addEventListener('click', (e) => {
-                    if (e.target === overlay) {
-                        overlay.style.display = 'none';
-                        fullscreenImage.src = ''; // Clear image
-                    }
                 });
             </script>
         </main>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
-        <script src="main.js"></script>
 
         <footer>
             <p id="footer">Designed and built by Reason Delafét.<br>

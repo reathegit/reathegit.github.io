@@ -939,7 +939,7 @@ main {
 .close-overlay {
     position: absolute;
     top: 30px;
-    right: 40px;
+    left: 40px;
     font-size: 40px;
     color: white;
     cursor: pointer; /* Hand cursor */
