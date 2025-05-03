@@ -964,8 +964,8 @@ main {
 
 .close-overlay {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 25px;
+    left: 60px;
     font-size: 40px;
     background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0); /* Matches .button */
     -webkit-background-clip: text;
