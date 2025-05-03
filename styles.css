@@ -899,14 +899,14 @@ main {
 
 .vaultIMG .IMG {
     display: block;
-    width: calc(24% - 20px); /* Each image takes 25% of container width minus 20px for margins */
-    margin: 0 10px; /* 10px margin on left and right */
+    width: calc(24% - 20px);
+    margin: 0 10px;
     height: auto;
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.075s ease-in-out;
 }
-
 .vaultIMG .IMG:hover {
     transform: scale(1.05);
+    cursor: pointer; /* Indicates clickability */
 }
