@@ -913,27 +913,26 @@ main {
 }
 
 .fullscreen-overlay {
-    display: none; /* Hidden by default */
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
-    z-index: 2000; /* Above topBar (z-index: 1000) */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto; /* Handle large images */
     margin: 0;
-    padding: 0;
+    padding: 20px; /* Added padding */
 }
 
 .fullscreen-image {
-    max-width: 90%;
-    max-height: 90vh; /* Fit within viewport height */
-    object-fit: contain; /* Maintain aspect ratio */
-    border-radius: 5px; /* Match screenshot style */
+    max-width: 95vw;  /* Increased from 90% to 95% of viewport width */
+    max-height: 95vh; /* Increased from 90% to 95% of viewport height */
+    object-fit: contain;
+    border-radius: 5px;
+    cursor: zoom-out; /* Shows user they can click to exit */
 }
 
 .nav-arrow {
