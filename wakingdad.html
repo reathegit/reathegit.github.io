@@ -76,19 +76,45 @@
 
             <!-- Screenshots Section -->
             <section class="vaultIMG">
-                <a href="resources/WD1.png" target="_blank" rel="noopener noreferrer">
-                    <img id="wakingDad1" class="IMG" src="resources/WD1.png" alt="Waking Dad gameplay screenshot 1">
-                </a>
-                <a href="resources/WD2.png" target="_blank" rel="noopener noreferrer">
-                    <img id="wakingDad2" class="IMG" src="resources/WD2.png" alt="Waking Dad gameplay screenshot 2">
-                </a>
-                <a href="resources/WD3.png" target="_blank" rel="noopener noreferrer">
-                    <img id="wakingDad3" class="IMG" src="resources/WD3.png" alt="Waking Dad gameplay screenshot 3">
-                </a>
-                <a href="resources/WD4.png" target="_blank" rel="noopener noreferrer">
-                    <img id="wakingDad4" class="IMG" src="resources/WD3.png" alt="Waking Dad gameplay screenshot 4">
-                </a>
+                <img id="wakingDad1" class="IMG" src="resources/WD1.png" alt="Waking Dad gameplay screenshot 1">
+                <img id="wakingDad2" class="IMG" src="resources/WD2.png" alt="Waking Dad gameplay screenshot 2">
+                <img id="wakingDad3" class="IMG" src="resources/WD3.png" alt="Waking Dad gameplay screenshot 3">
+                <img id="wakingDad4" class="IMG" src="resources/WD4.png" alt="Waking Dad gameplay screenshot 4">
             </section>
+            
+            <!-- Full-screen overlay -->
+            <div id="fullscreen-overlay" class="fullscreen-overlay">
+                <span id="close-overlay" class="close-overlay">&times;</span>
+                <img id="fullscreen-image" class="fullscreen-image" src="" alt="Full-screen screenshot">
+            </div>
+            
+            <script>
+                // Get all screenshot images
+                const images = document.querySelectorAll('.vaultIMG .IMG');
+                const overlay = document.getElementById('fullscreen-overlay');
+                const fullscreenImage = document.getElementById('fullscreen-image');
+                const closeButton = document.getElementById('close-overlay');
+            
+                // Add click event to each image
+                images.forEach(image => {
+                    image.addEventListener('click', () => {
+                        fullscreenImage.src = image.src;
+                        overlay.style.display = 'flex';
+                    });
+                });
+            
+                // Close overlay when clicking the close button
+                closeButton.addEventListener('click', () => {
+                    overlay.style.display = 'none';
+                });
+            
+                // Close overlay when clicking outside the image
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) {
+                        overlay.style.display = 'none';
+                    }
+                });
+            </script>
         </main>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
