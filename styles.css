@@ -913,31 +913,26 @@ main {
 }
 
 .fullscreen-overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background-color: rgba(0, 0, 0, 0.95) !important;
-    z-index: 2000 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 20px !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px; /* Added padding */
 }
 
 .fullscreen-image {
-    /* Current base size (70%) multiplied by 1.75 for 75% larger */
-    max-width: min(122.5vw, 100%) !important;  /* 70vw * 1.75 = 122.5vw */
-    max-height: min(122.5vh, 100%) !important; /* 70vh * 1.75 = 122.5vh */
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-    border-radius: 5px !important;
-    cursor: zoom-out !important;
-    /* Ensures image never exceeds viewport */
-    transform: scale(1) !important;
-    transition: transform 0.2s ease;
+    max-width: 95vw;  /* Increased from 90% to 95% of viewport width */
+    max-height: 95vh; /* Increased from 90% to 95% of viewport height */
+    object-fit: contain;
+    border-radius: 5px;
+    cursor: zoom-out; /* Shows user they can click to exit */
 }
 
 .nav-arrow {
