@@ -909,4 +909,44 @@ main {
 
 .vaultIMG .IMG:hover {
     transform: scale(1.05);
+    cursor: pointer; /* Indicates clickability */
+}
+
+.fullscreen-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+    z-index: 2000; /* Above topBar (z-index: 1000) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Handle large images */
+    margin: 0;
+    padding: 0;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90vh; /* Fit within viewport height */
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 5px; /* Match screenshot style */
+}
+
+.close-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer; /* Hand cursor */
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-overlay:hover {
+    transform: scale(1.2); /* Matches site’s hover effects */
+    cursor: pointer; /* Reinforce hand cursor */
 }
