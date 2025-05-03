@@ -950,3 +950,27 @@ main {
     transform: scale(1.2); /* Matches site’s hover effects */
     cursor: pointer; /* Reinforce hand cursor */
 }
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    z-index: 2100; /* Above overlay */
+}
+
+.nav-arrow:hover {
+    transform: translateY(-50%) scale(1.2); /* Matches close button */
+    cursor: pointer;
+}
+
+.nav-arrow-left {
+    left: 20px;
+}
+
+.nav-arrow-right {
+    right: 20px;
+}
