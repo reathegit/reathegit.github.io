@@ -89,13 +89,18 @@
             </div>
             
             <script>
-                // Get all screenshot images
                 const images = document.querySelectorAll('.vaultIMG .IMG');
                 const overlay = document.getElementById('fullscreen-overlay');
                 const fullscreenImage = document.getElementById('fullscreen-image');
                 const closeButton = document.getElementById('close-overlay');
             
-                // Add click event to each image
+                // Hide overlay on page load
+                window.addEventListener('load', () => {
+                    overlay.style.display = 'none';
+                    fullscreenImage.src = ''; // Ensure no image is set
+                });
+            
+                // Add click event to images
                 images.forEach(image => {
                     image.addEventListener('click', () => {
                         fullscreenImage.src = image.src;
@@ -106,12 +111,14 @@
                 // Close overlay when clicking the close button
                 closeButton.addEventListener('click', () => {
                     overlay.style.display = 'none';
+                    fullscreenImage.src = ''; // Clear image
                 });
             
                 // Close overlay when clicking outside the image
                 overlay.addEventListener('click', (e) => {
                     if (e.target === overlay) {
                         overlay.style.display = 'none';
+                        fullscreenImage.src = ''; // Clear image
                     }
                 });
             </script>

@@ -938,8 +938,8 @@ main {
 
 .close-overlay {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 40px;
     font-size: 40px;
     color: white;
     cursor: pointer; /* Hand cursor */
