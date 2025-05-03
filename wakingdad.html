@@ -70,7 +70,7 @@
                     <h1 class="vaultH1">Waking Dad - Game Jam Project</h1>
                     <p class="vaultTxt">Made in <b>Unity Engine</b>, Waking Dad is a <b>fast-paced action game</b> where you must save your father from a coma in under 60 seconds by crafting a life-saving potion in his basement lab.<br><br>
                                        As the <b>Design Lead</b>, I designed the levels, balanced the gameplay mechanics, and ensured the chaotic yet intuitive experience inspired by Breaking Bad.<br><br>
-                                       The game was developed during a <b>game jam</b>, pushing our team to create a polished prototype under tight constraints using <b>C#</b> and Unity's particle systems for visual effects.</p>
+                                       The game was developed during a <b>game jam</b>, pushing our team to create a polished prototype under tight constraints using <b>C#</b> and Unity’s particle systems for visual effects.</p>
                 </section>
             </div>
 
@@ -84,7 +84,7 @@
             
             <script>
                 const images = document.querySelectorAll('.vaultIMG .IMG');
-                const imageSources = Array.from(images).map(img => img.src);
+                const imageSources = Array.from(images).map(img => img.src); // Store image sources
 
                 images.forEach((image, index) => {
                     image.addEventListener('click', () => {
@@ -95,6 +95,7 @@
 
                         // Create close button
                         const closeButton = document.createElement('span');
+                        closeButton.id = 'close-overlay';
                         closeButton.className = 'close-overlay';
                         closeButton.innerHTML = '×';
 
@@ -108,14 +109,12 @@
                         rightArrow.className = 'nav-arrow nav-arrow-right';
                         rightArrow.innerHTML = '►';
 
-                        // Create full-screen image (NOW AT 70% SIZE)
+                        // Create full-screen image
                         const fullscreenImage = document.createElement('img');
+                        fullscreenImage.id = 'fullscreen-image';
                         fullscreenImage.className = 'fullscreen-image';
                         fullscreenImage.src = image.src;
                         fullscreenImage.alt = 'Full-screen screenshot';
-                        // Set to 70% of viewport size
-                        fullscreenImage.style.maxWidth = '70vw';
-                        fullscreenImage.style.maxHeight = '70vh';
 
                         // Append elements
                         overlay.appendChild(closeButton);
@@ -124,21 +123,21 @@
                         overlay.appendChild(fullscreenImage);
                         document.body.appendChild(overlay);
 
-                        let currentIndex = index;
+                        let currentIndex = index; // Track current image
 
+                        // Function to update image
                         const updateImage = () => {
                             fullscreenImage.src = imageSources[currentIndex];
                         };
 
-                        // Navigation handlers
-                        leftArrow.addEventListener('click', (e) => {
-                            e.stopPropagation();
+                        // Left arrow click
+                        leftArrow.addEventListener('click', () => {
                             currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
                             updateImage();
                         });
 
-                        rightArrow.addEventListener('click', (e) => {
-                            e.stopPropagation();
+                        // Right arrow click
+                        rightArrow.addEventListener('click', () => {
                             currentIndex = (currentIndex + 1) % imageSources.length;
                             updateImage();
                         });
@@ -151,16 +150,12 @@
                             } else if (e.key === 'ArrowRight') {
                                 currentIndex = (currentIndex + 1) % imageSources.length;
                                 updateImage();
-                            } else if (e.key === 'Escape') {
-                                document.body.removeChild(overlay);
-                                document.removeEventListener('keydown', handleKeydown);
                             }
                         };
                         document.addEventListener('keydown', handleKeydown);
 
-                        // Close handlers
-                        closeButton.addEventListener('click', (e) => {
-                            e.stopPropagation();
+                        // Close overlay
+                        closeButton.addEventListener('click', () => {
                             document.body.removeChild(overlay);
                             document.removeEventListener('keydown', handleKeydown);
                         });

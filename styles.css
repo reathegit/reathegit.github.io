@@ -912,31 +912,27 @@ main {
     cursor: pointer; /* Indicates clickability */
 }
 
-/* Fullscreen overlay - make sure this comes AFTER other styles */
 .fullscreen-overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background-color: rgba(0, 0, 0, 0.95) !important;
-    z-index: 2000 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 !important;
-    padding: 20px !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px; /* Added padding */
 }
 
 .fullscreen-image {
-    max-width: 70vw !important;  /* Changed from 95vw to 70vw */
-    max-height: 70vh !important; /* Changed from 95vh to 70vh */
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-    border-radius: 5px !important;
-    cursor: zoom-out !important;
-    transform: scale(1) !important;
+    max-width: 95vw;  /* Increased from 90% to 95% of viewport width */
+    max-height: 95vh; /* Increased from 90% to 95% of viewport height */
+    object-fit: contain;
+    border-radius: 5px;
+    cursor: zoom-out; /* Shows user they can click to exit */
 }
 
 .nav-arrow {
