@@ -15,7 +15,7 @@
             <h1 class="h1 name-container" id="myName">
                 <a href="https://reathegit.github.io">Reason Delafét</a>
             </h1>
-            <h2 class="h2 title-container" id="Uni">Level Designer and Writer</h2>
+            <h2 class="h2 title-container" id="Uni">Design Consultant and Level Designer</h2>
             <nav id="nav" class="navigation">
                 <ul id="nav-items">
                     <li class="top-nav"><a href="https://reathegit.github.io/">Player One</a></li>
@@ -44,9 +44,26 @@
         <!-- SECTIONS -->
         <main>
             <section id="sections">
+                <div class="tab-row">
+                    <div class="tab-container">
+                        <a class="design-tab" href="#" onclick="toggleSection('design-philosophy')">
+                            <span>Design Philosophy</span>
+                        </a>
+                    </div>
+                    <div class="tab-container">
+                        <a class="design-tab" href="#" onclick="toggleSection('level-design')">
+                            <span>Level Design</span>
+                        </a>
+                    </div>
+                    <div class="tab-container">
+                        <a class="design-tab" href="#" onclick="toggleSection('design-articles')">
+                            <span>Design Articles</span>
+                        </a>
+                    </div>
+                </div>
 
-                <div id="work-experience" class="designSection">
-                    <h1 class="vaultH1" id="bioH1">Design Philosophy</h1>
+                <div id="design-philosophy" class="designSection">
+                    <h1 class="vaultH1">Design Philosophy</h1>
                     <p class="bioiSectionTxt">Pre-development group ideation meetings. My new peeve. Assembling a team of people to sit in a zoom call and conjure a unique game idea that the entire collective history of game designer concentration has itself failed to conjure is frankly less likely to produce your company's magnum opus than having it descend upon you while singing your favourite Taylor Swift single in the shower. The "think then build" approach leads only to blank page syndrome and uninspired pseudo-art. But surely the opposite, to build and then think is no better. There is hope, however, provided by none other than Hidemaro Fujibayashi in this video as he recalls the design process that led him to create the masterpiece that is The Legend of Zelda: Breath of the Wild.</p><br>
 
                     <div style="text-align: center;">
@@ -58,7 +75,6 @@
                     </div>                    
 
                     <p class="bioiSectionTxt">By taking a cleverly selected combination of tried and tested, proven mechanics from existing games, there are various ways to find and create unique combinations of these elements to make a wonderful game that feels like no other. In an effort to turn this process into a science with a repeatable, rigid-enough-to-guarantee-progress-when-you-need-it guideline, I undertook some excruciatingly thorough research to develop my own formula that I call the 'Reason Road'. In pursuit of this holy elixir I have drawn from as far back as Nolan Bushnell all the way up to the cutting edge design approaches of hyper-talented modern indie developers, as well as the wealth of knowledge from my university lecturers, my former boss and Rockstar Director, TEDx talks, GDC talks, the esteemed Don Norman, Richard Lemarchand, Raph Koster, Elizabeth Gilbert, design thinking, self-determination theory, the Octalysis framework, the MDA framework, and many other sources.<br><br></p>
-                    
                     
                     <img src="resources/theReasonRoad.png" alt="Reason Road flowchart" style="width: 222px; float: left; margin-left: 50px;">
                     <!-- Wrapper for first image and text -->
@@ -83,12 +99,24 @@
                     </div>                    
                     <p class="bioiSectionTxt">And how can a game achieve all this? Among a million other things, it needs a great core game loop, it needs a great progression home, it needs a desirable means of continual updates, it needs an appropriate susceptibility to the player's demands, it needs an effective inbuilt teaching system, it needs a source for sympathy, it needs to promote cognitive mapping, it needs to facilitate perfection resolution, and it needs to create artistic paradox. To me, game design is not just about ideating and tweaking. But rather it is about creating beautiful and important art through a balance of exploration, interaction, story, and play.<br><br></p>
                 </div>
-            </section>
 
-            <section id="articleSection">
-                <div id="work-experience" class="articleSection">
-                    <h1 class="vaultH1" id="bioH1">Design Articles</h1>
-            
+                <div id="level-design" class="designSection" style="display: none;">
+                    <h1 class="vaultH1">Level Design</h1>
+                    <p class="bioiSectionTxt">I employ a player-first approach that crafts worlds with natural rhythm - spaces that breathe between tension and release, punctuated by meaningful surprises and clear gameplay incentives. My background as a writer informs how I stage memorable moments, transforming functional layouts into compelling environmental narratives and fair and intuitive spatial dynamics.</p><br>
+                    <p class="bioiSectionTxt">I prioritise intuitive wayfinding through subtle visual language, balanced with organic opportunities for player expression. Every junction becomes a storytelling device - not just multiple paths, but multiple stories. Rooted in cognitive psychology, my designs create the illusion of unscripted freedom while maintaining deliberate pacing. I pride myself on my ability to do a lot with very little and pack style into a husk and depth into a puddle, crafting richness from simplicity.</p><br>
+                    
+                    <p class="bioiSectionTxt">My strength lies in maximalism through minimalism:</p>
+                    <ul class="bioiSectionTxt" style="margin-left: 40px;">
+                        <li>Transforming clunky spaces into fluid gameplay canvases</li>
+                        <li>Embedding systemic depth in seemingly simple mechanics</li>
+                        <li>Creating replay value through layered discovery rather than brute-force content</li>
+                    </ul>
+                    
+                    <p class="bioiSectionTxt">This player-centric approach ensures every moment feels earned yet unexpected. Whether crafting tight multiplayer maps or expansive story worlds, I build levels that resonate beyond their runtime - where players recall not just what they did, but how it made them feel.</p>
+                </div>
+
+                <div id="design-articles" class="designSection" style="display: none;">
+                    <h1 class="vaultH1">Design Articles</h1>
                     <div class="content">
                         <!-- Article 1 -->
                         <div class="article">
@@ -103,7 +131,7 @@
                                 </a>
                             </div>
                         </div>
-            
+                    
                         <!-- Article 2 -->
                         <div class="article">
                             <div class="title">
@@ -117,7 +145,7 @@
                                 </a>
                             </div>
                         </div>
-
+        
                         <!-- Article 3 -->
                         <div class="article">
                             <div class="title">
@@ -131,7 +159,7 @@
                                 </a>
                             </div>
                         </div>
-
+        
                         <!-- Article 4 -->
                         <div class="article">
                             <div class="title">
@@ -145,7 +173,7 @@
                                 </a>
                             </div>
                         </div>
-
+        
                         <!-- Article 5 -->
                         <div class="article">
                             <div class="title">
@@ -159,12 +187,9 @@
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
-            
-            
         </main>
 
         <div class="star" id="stars"></div>
@@ -174,6 +199,25 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
         <script src="main.js"></script>
+        <script>
+            function toggleSection(sectionId) {
+                // Hide all sections first
+                document.getElementById('design-philosophy').style.display = 'none';
+                document.getElementById('level-design').style.display = 'none';
+                document.getElementById('design-articles').style.display = 'none';
+                
+                // Remove active class from all tabs
+                document.querySelectorAll('.design-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Show the selected section
+                document.getElementById(sectionId).style.display = 'block';
+                
+                // Add active class to clicked tab
+                event.target.closest('.design-tab').classList.add('active');
+            }
+        </script>
 
         <footer>
             <p id="footer">Designed and built by Reason Delafét.<br>

@@ -185,7 +185,6 @@ animation: slideDown 0.8s ease-out;*/
     100% { background-position: 0% 50%; }
 }
 
-
 /* Glowing box-shadow underneath */
 @keyframes gradientGlow {
     0% { box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5); }
@@ -207,7 +206,8 @@ animation: slideDown 0.8s ease-out;*/
     font-size: 20px;
     color: white;
     transition: transform 0.075s ease-in-out;
-    animation: gradientAnimation 5s linear infinite; /* Same animation as the name and picture */
+    animation: gradientAnimation 5s linear infinite;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Text shadow instead of box-shadow */
 }
 
 /* Tab hover effect */
@@ -218,6 +218,7 @@ animation: slideDown 0.8s ease-out;*/
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: scale(1.1);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Maintain text shadow on hover */
 }
 
 /* Style for the current tab (underline) */
@@ -225,10 +226,11 @@ animation: slideDown 0.8s ease-out;*/
     font-weight: bold;
     font-size: 20px;
     color: white;
-    transition: transform 0.075s ease-in-out, border-bottom 0.075s ease-in-out; /* Add transition for border-bottom */
-    animation: gradientAnimation 5s linear infinite; /* Same animation as the name and picture */
-    border-bottom: 1px solid #ffffff; /* Default border */
+    transition: transform 0.075s ease-in-out, border-bottom 0.075s ease-in-out;
+    animation: gradientAnimation 5s linear infinite;
+    border-bottom: 1px solid #ffffff;
     padding-bottom: 17px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Text shadow instead of box-shadow */
 }
 
 /* Tab hover effect */
@@ -239,7 +241,8 @@ animation: slideDown 0.8s ease-out;*/
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: scale(1.1);
-    border-bottom: 1px solid transparent; /* Make the border transparent */
+    border-bottom: 1px solid transparent;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Maintain text shadow on hover */
 }
 
 #photo {
@@ -258,7 +261,7 @@ animation: slideDown 0.8s ease-out;*/
     border: 4px solid transparent; /* Keep the border in place...seems to do nothing */
 }
 
-/* Can  delete this?*/
+/* Can delete this? */
 #me {
     width: 100%;
     height: 100%;
@@ -395,6 +398,7 @@ li {
     color: white;
     margin-top: -1%;
     text-align: left;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Text shadow instead of box-shadow */
 }
 
 .h3 {
@@ -504,6 +508,7 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+/*
 #designSection {
     display: flex;
     flex-direction: row;
@@ -511,21 +516,21 @@ main {
     flex-wrap: wrap;
     width: 100%;
 }
+*/
 
 .designSection {
     margin-top: 50px;
     margin-bottom: 1%;
     width: 1800px;
-    height: 1600px;
+    max-width: 100%;
     background-color: #191919;
     margin-left: 4%;
     margin-right: 4%;
-    border-radius: 5px; /* Rounds the corners of the section box */
+    border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    padding: 20px;
 }
-
-
-
 
 #articleSection {
     display: flex;
@@ -582,9 +587,6 @@ main {
     height: 240px; /* Fixed height for the image */
     margin-top: 10px; /* Space between title and image */
 }
-
-
-
 
 #sections {
     display: flex;
@@ -648,8 +650,6 @@ main {
     margin-left: 4%;
     margin-right: 4%;
 }
-
-
 
 /*The Vault Page*/
 
@@ -802,7 +802,72 @@ main {
     height: 100%;
 }
 
-/* War Room News */
+/* War Room */
+.design-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #212121;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    border: 1px solid #444;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add subtle dropshadow */
+}
+
+.design-tab span {
+    font-weight: bold;
+    color: white;
+    animation: gradientAnimation 5s linear infinite;
+    transition: color 0.075s ease-in-out;
+}
+
+.design-tab:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lighter shadow on hover */
+}
+
+.design-tab:hover span {
+    color: transparent;
+    background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.design-tab.active span {
+    color: white;
+    animation: gradientAnimation 5s linear infinite;
+}
+
+/* Buttons Row Layout */
+.tab-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin: 20px auto;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.tab-container {
+    display: inline-flex;
+    margin: 0;
+}
+
+/* Ensure parent section doesn't interfere */
+#sections {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
 
 /* Waking Dad Page */
 
@@ -816,48 +881,56 @@ main {
 .backButton {
     display: flex;
     align-items: center;
-    padding: 8px 16px;
-    background-color: #212121;
-    border-radius: 5px;
-    width: fit-content;
-    box-sizing: border-box;
-    transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
+    width: 0;
+    flex-shrink: 0;
 }
 
 .backButton a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    text-decoration: none;
+    padding: 12px 24px;
+    background-color: #212121;
+    border-radius: 5px;
     color: white;
-}
-
-.backArrow {
-    font-size: 24px;
-    margin-right: 10px;
-    color: white;
-    font-weight: bold;
-    animation: gradientAnimation 5s linear infinite;
-}
-
-.back {
     font-size: 16px;
     font-weight: bold;
-    color: white;
-    animation: gradientAnimation 5s linear infinite;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    border: 1px solid #444;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.backButton:hover .backArrow,
-.backButton:hover .back {
+.backButton .back {
+    font-weight: bold;
+    color: white;
+    animation: gradientAnimation 5s linear infinite;
+    transition: color 0.075s ease-in-out;
+    font-size: 16px !important;
+    line-height: 1;
+    margin: 0;
+}
+
+.backButton .backArrow {
+    margin-right: 8px;
+    font-size: 24px;
+    color: white;
+    transition: color 0.075s ease-in-out;
+}
+
+.backButton a:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.backButton a:hover .back,
+.backButton a:hover .backArrow {
     color: transparent;
     background: linear-gradient(45deg, #007BFF, #00FF88, #FF0088, #007BFF);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.backButton:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
 }
 
 /* Play Now Button */
@@ -869,7 +942,7 @@ main {
 .play-button {
     display: inline-flex;
     align-items: center;
-    padding: 8px 16px;
+    padding: 12px 24px;
     background-color: #212121;
     border-radius: 5px;
     color: white;
@@ -877,13 +950,22 @@ main {
     font-weight: bold;
     text-decoration: none;
     box-sizing: border-box;
-    transition: transform 0.075s ease-in-out, filter 0.075s ease-in-out;
+    transition: all 0.3s ease;
+    border: 1px solid #444;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .play-button span {
     font-weight: bold;
     color: white;
     animation: gradientAnimation 5s linear infinite;
+    transition: color 0.075s ease-in-out;
+}
+
+.play-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .play-button:hover span {
@@ -892,11 +974,6 @@ main {
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.play-button:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
 }
 
 /* Video and Info Container */
@@ -977,16 +1054,15 @@ main {
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 20px; /* Added padding */
+    padding: 20px;
 }
 
 .fullscreen-image {
-    max-width: 95vw;  /* Increased from 90% to 95% of viewport width */
-    max-height: 95vh; /* Increased from 90% to 95% of viewport height */
+    max-width: 95vw;
+    max-height: 95vh;
     object-fit: contain;
     border-radius: 5px;
-    cursor: zoom-out; /* Shows user they can click to exit */
-    cursor: default; /* Set to default cursor */
+    cursor: default;
 }
 
 .nav-arrow {
@@ -994,17 +1070,18 @@ main {
     top: 50%;
     transform: translateY(-50%);
     font-size: 40px;
-    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0); /* Matches .button */
+    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    transition: transform 0.075s ease-in-out; /* Matches .button */
-    z-index: 2100; /* Above overlay */
+    transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
+    z-index: 2100;
 }
 
 .nav-arrow:hover {
-    transform: translateY(-50%) scale(1.2); /* Scale only, keep gradient */
+    transform: translateY(-50%) scale(1.2);
+    filter: brightness(1.2);
     cursor: pointer;
 }
 
@@ -1021,15 +1098,16 @@ main {
     top: 40px;
     left: 80px;
     font-size: 40px;
-    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0); /* Matches .button */
+    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    transition: transform 0.075s ease-in-out; /* Matches .button */
+    transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
 }
 
 .close-overlay:hover {
-    transform: scale(1.2); /* Scale only, keep gradient */
+    transform: scale(1.2);
+    filter: brightness(1.2);
     cursor: pointer;
 }
