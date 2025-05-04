@@ -735,7 +735,6 @@ main {
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Matches .button */
     transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out; /* Matches .button */
-    cursor: pointer; /* Indicate clickability */
     position: relative; /* Required for pseudo-element positioning */
     text-decoration: none; /* Remove standard underline */
 }
