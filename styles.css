@@ -1091,7 +1091,7 @@ main {
     cursor: default;
 }
 
-/* Existing non-fullscreen arrow styles (unchanged for War Room slideshow) */
+/* Existing non-fullscreen arrow styles */
 .nav-arrow {
     position: absolute;
     top: 50%;
@@ -1113,11 +1113,11 @@ main {
 }
 
 .nav-arrow-left {
-    left: 500px; /* Keep for non-fullscreen arrows */
+    left: -50px;
 }
 
 .nav-arrow-right {
-    right: 500px; /* Keep for non-fullscreen arrows */
+    right: -50px;
 }
 
 /* New fullscreen arrow styles */
@@ -1148,7 +1148,6 @@ main {
 .fullscreen-nav-arrow-right {
     right: -60px; /* 20px from image edge, accounting for ~40px arrow width */
 }
-
 
 .close-overlay {
     position: absolute;
