@@ -1142,7 +1142,7 @@ main {
 }
 
 .fullscreen-nav-arrow-left {
-    left: 250px; /* 20px from image edge, accounting for ~40px arrow width */
+    left: 500px; /* 20px from image edge, accounting for ~40px arrow width */
 }
 
 .fullscreen-nav-arrow-right {
