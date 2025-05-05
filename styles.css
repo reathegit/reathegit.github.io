@@ -529,7 +529,7 @@ main {
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
-    padding: 10px 35px 0px 35px;
+    padding: 10px 35px 20px 35px;
 }
 
 #articleSection {
@@ -1029,7 +1029,7 @@ main {
 .projectINFO {
     flex: 1;
     min-width: 300px;
-    padding: 10px 35px 25px 35px;
+    padding: 10px 35px 20px 35px;
     background-color: #191919;
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
