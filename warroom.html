@@ -267,6 +267,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
         <script src="main.js"></script>
         <script>
+            // Store keydown handler globally
+            let keydownHandler = null;
+
             function toggleSection(sectionId) {
                 // Hide all sections first
                 document.getElementById('design-philosophy').style.display = 'none';
@@ -358,10 +361,25 @@
                 document.getElementById('overlay-image').src = images[index].src;
                 document.getElementById('image-overlay').style.display = 'block';
                 showSlide(slideshowId, index);
+
+                // Add keyboard navigation
+                keydownHandler = (e) => {
+                    if (e.key === 'ArrowLeft') {
+                        prevSlide(currentSlideshow);
+                    } else if (e.key === 'ArrowRight') {
+                        nextSlide(currentSlideshow);
+                    }
+                };
+                document.addEventListener('keydown', keydownHandler);
             }
 
             function closeOverlay() {
                 document.getElementById('image-overlay').style.display = 'none';
+                // Remove keyboard navigation
+                if (keydownHandler) {
+                    document.removeEventListener('keydown', keydownHandler);
+                    keydownHandler = null;
+                }
             }
 
             // Initialize slideshows
