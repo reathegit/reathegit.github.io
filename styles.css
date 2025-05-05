@@ -1142,11 +1142,11 @@ main {
 }
 
 .fullscreen-nav-arrow-left {
-    left: -60px; /* 20px from image edge, accounting for ~40px arrow width */
+    left: 500px; /* 20px from image edge, accounting for ~40px arrow width */
 }
 
 .fullscreen-nav-arrow-right {
-    right: -60px; /* 20px from image edge, accounting for ~40px arrow width */
+    right: 500px; /* 20px from image edge, accounting for ~40px arrow width */
 }
 
 .close-overlay {
