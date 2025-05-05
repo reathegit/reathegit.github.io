@@ -1091,7 +1091,7 @@ main {
     cursor: default;
 }
 
-/* Existing non-fullscreen arrow styles */
+/* Non-fullscreen arrow styles (unchanged) */
 .nav-arrow {
     position: absolute;
     top: 50%;
@@ -1118,6 +1118,37 @@ main {
 
 .nav-arrow-right {
     right: -50px;
+}
+
+/* Fullscreen arrow styles (new) */
+.fullscreen-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
+    z-index: 2100;
+    display: block; /* Ensure arrows are visible */
+    visibility: visible; /* Prevent hidden arrows */
+}
+
+.fullscreen-nav-arrow:hover {
+    transform: translateY(-50%) scale(1.2);
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+.fullscreen-nav-arrow-left {
+    left: -60px; /* 20px from image edge, accounting for ~40px arrow width */
+}
+
+.fullscreen-nav-arrow-right {
+    right: -60px; /* 20px from image edge, accounting for ~40px arrow width */
 }
 
 /* New fullscreen arrow styles */
@@ -1148,6 +1179,8 @@ main {
 .fullscreen-nav-arrow-right {
     right: 500px; /* 20px from image edge, accounting for ~40px arrow width */
 }
+
+/* close button*/
 
 .close-overlay {
     position: absolute;
