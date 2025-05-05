@@ -505,7 +505,7 @@ main {
     margin-right: 4%;
     border-radius: 5px; /* Rounds the corners of the section box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    padding: 15px 35px 0px 35px;
+    padding: 10px 35px 0px 35px;
 }
 
 /*
@@ -529,7 +529,7 @@ main {
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
-    padding: 15px 35px 0px 35px;
+    padding: 10px 35px 0px 35px;
 }
 
 #articleSection {
@@ -620,7 +620,6 @@ main {
     margin-right: 0%;
     border-radius: 5px; /* Rounds the corners of the section box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    padding: 15px 35px 0px 35px;
 }
 
 .rSections {
@@ -633,7 +632,8 @@ main {
     margin-right: 4%;
     border-radius: 5px; /* Rounds the corners of the section box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    padding: 15px 35px 0px 35px;
+    padding: 10px 35px 0px 35px;
+    box-sizing: border-box;
 }
 
 .nSections {
@@ -1029,7 +1029,7 @@ main {
 .projectINFO {
     flex: 1;
     min-width: 300px;
-    padding: 15px 35px 25px 35px;
+    padding: 10px 35px 25px 35px;
     background-color: #191919;
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
