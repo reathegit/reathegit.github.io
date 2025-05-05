@@ -1112,11 +1112,11 @@ main {
 }
 
 .nav-arrow-left {
-    left: 20px; /* Updated for slideshow and overlay */
+    left: 500px;
 }
 
 .nav-arrow-right {
-    right: 20px; /* Updated for slideshow and overlay */
+    right: 500px;
 }
 
 .close-overlay {
@@ -1130,12 +1130,11 @@ main {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
-    z-index: 2100;
 }
 
 .close-overlay:hover {
     transform: scale(1.2);
-    filter: brightness(1.05);
+    filter: brightness(1.2);
     cursor: pointer;
 }
 
