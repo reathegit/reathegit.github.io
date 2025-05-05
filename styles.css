@@ -562,8 +562,8 @@ main {
     flex-direction: column; /* Stack title above image */
     align-items: center; /* Center-align items horizontally */
     width: 300px; /* Give each column a fixed width */
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* .article:first-child {
