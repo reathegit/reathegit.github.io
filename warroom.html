@@ -76,10 +76,10 @@
 
                     <p class="bioiSectionTxt">By taking a cleverly selected combination of tried and tested, proven mechanics from existing games, there are various ways to find and create unique combinations of these elements to make a wonderful game that feels like no other. In an effort to turn this process into a science with a repeatable, rigid-enough-to-guarantee-progress-when-you-need-it guideline, I undertook some excruciatingly thorough research to develop my own formula that I call the 'Reason Road'. In pursuit of this holy elixir I have drawn from as far back as Nolan Bushnell all the way up to the cutting edge design approaches of hyper-talented modern indie developers, as well as the wealth of knowledge from my university lecturers, my former boss and Rockstar Director, TEDx talks, GDC talks, the esteemed Don Norman, Richard Lemarchand, Raph Koster, Elizabeth Gilbert, design thinking, self-determination theory, the Octalysis framework, the MDA framework, and many other sources.<br><br></p>
                     
-                    <img src="resources/theReasonRoad.png" alt="Reason Road flowchart" style="width: 222px; float: left; margin-left: 50px;">
+                    <img src="resources/inText/theReasonRoad.png" alt="Reason Road flowchart" style="width: 222px; float: left; margin-left: 50px;">
                     <!-- Wrapper for first image and text -->
                     <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-                        <img src="resources/pointOfSynchronosity.jpg" alt="Point Of Synchronosity slide" 
+                        <img src="resources/inText/pointOfSynchronosity.jpg" alt="Point Of Synchronosity slide" 
                              style="width: 600px; margin-left: 25px; vertical-align: top;">
                         <p style="margin-left: 25px; margin-right: 50px; flex-grow: 1; margin-top: 5px;">
                             So without further ado, here it is, that white flowchart to your left is the Reason Road in all its glory. This blue image is a visual representation of the more macro aim of this approach to game creation, which is to advance design, development, and production simultaneously.<br><br>
@@ -88,7 +88,7 @@
                     </div>
                     <!-- Wrapper for second image and text -->
                     <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-                        <img src="resources/reasonRoadStages.jpg" alt="Reason Road stages slide"
+                        <img src="resources/inText/reasonRoadStages.jpg" alt="Reason Road stages slide"
                              style="width: 600px; margin-left: 25px; vertical-align: top;">
                         <p style="margin-left: 25px; margin-right: 50px; flex-grow: 1; margin-top: 5px;">
                             And this blue image summarises the five stages of the Reason Road. In particular, I want to focus on the fifth stage, which is something like adding polish but in a more glorified manner. Ultimately, the goal is to max out the fun, enjoyment, and appeal of the game.<br><br>
@@ -161,11 +161,11 @@
                     </div>
 
                     <!-- Image Overlay -->
-                    <div id="image-overlay" style="display: none;">
-                        <i class="fas fa-times close-overlay" onclick="closeOverlay()"></i>
-                        <i class="fas fa-chevron-left nav-arrow nav-arrow-left" onclick="prevSlide(currentSlideshow)"></i>
-                        <img id="overlay-image" src="" alt="Full-screen image">
-                        <i class="fas fa-chevron-right nav-arrow nav-arrow-right" onclick="nextSlide(currentSlideshow)"></i>
+                    <div id="image-overlay" onclick="closeOverlay()">
+                        <i class="fas fa-times close-overlay" onclick="closeOverlay(); event.stopPropagation();"></i>
+                        <i class="fas fa-chevron-left nav-arrow nav-arrow-left" onclick="prevSlide(currentSlideshow); event.stopPropagation();"></i>
+                        <img id="overlay-image" src="" alt="Full-screen image" onclick="event.stopPropagation();">
+                        <i class="fas fa-chevron-right nav-arrow nav-arrow-right" onclick="nextSlide(currentSlideshow); event.stopPropagation();"></i>
                     </div>
 
                     <p class="bioiSectionTxt">My <g>core guiding principle</g> is that every inch of a level should exist for two purposes:</p>
@@ -193,7 +193,7 @@
                             </div>
                             <div class="image">
                                 <a href="https://reasondelafet.wordpress.com/how-why-we-enjoy-things/" target="_blank">
-                                    <img src="resources/paradox.png" alt="Article 1" class="article-image">
+                                    <img src="resources/articles/paradox.png" alt="Article 1" class="article-image">
                                 </a>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                             </div>
                             <div class="image">
                                 <a href="https://reasondelafet.wordpress.com/fps-level-design/" target="_blank">
-                                    <img src="resources/lvl.png" alt="Article 1" class="article-image">
+                                    <img src="resources/articles/lvl.png" alt="Article 1" class="article-image">
                                 </a>
                             </div>
                         </div>
@@ -221,7 +221,7 @@
                             </div>
                             <div class="image">
                                 <a href="https://reasondelafet.wordpress.com/psychological-needs-of-the-player/" target="_blank">
-                                    <img src="resources/gamerGirl.png" alt="Article 1" class="article-image">
+                                    <img src="resources/articles/gamerGirl.png" alt="Article 1" class="article-image">
                                 </a>
                             </div>
                         </div>
@@ -235,7 +235,7 @@
                             </div>
                             <div class="image">
                                 <a href="https://reasondelafet.wordpress.com/cognitive-mapping/" target="_blank">
-                                    <img src="resources/cogMap.png" alt="Article 1" class="article-image">
+                                    <img src="resources/articles/cogMap.png" alt="Article 1" class="article-image">
                                 </a>
                             </div>
                         </div>
@@ -249,7 +249,7 @@
                             </div>
                             <div class="image">
                                 <a href="https://reasondelafet.wordpress.com/ingredients-for-a-successful-game/" target="_blank">
-                                    <img src="resources/mario.png" alt="Article 1" class="article-image">
+                                    <img src="resources/articles/mario.png" alt="Article 1" class="article-image">
                                 </a>
                             </div>
                         </div>
