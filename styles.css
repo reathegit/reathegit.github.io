@@ -1,7 +1,6 @@
 /* unsure if .textbox .experience and .vaultInfo do anything */
 
 /* Adjust to user device */
-
 @media (max-width: 768px) {
     .video-info-container {
         flex-direction: column;
@@ -217,7 +216,7 @@ animation: slideDown 0.8s ease-out;*/
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform: scale(1.1);
+    transform: scale(1.05);
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Maintain text shadow on hover */
 }
 
@@ -240,7 +239,7 @@ animation: slideDown 0.8s ease-out;*/
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform: scale(1.1);
+    transform: scale(1.05);
     border-bottom: 1px solid transparent;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Maintain text shadow on hover */
 }
@@ -300,7 +299,7 @@ animation: slideDown 0.8s ease-out;*/
 }
 
 .button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
     filter: brightness(1.2);
 }
@@ -1086,11 +1085,11 @@ main {
 }
 
 .nav-arrow-left {
-    left: 500px;
+    left: 20px; /* Updated for slideshow and overlay */
 }
 
 .nav-arrow-right {
-    right: 500px;
+    right: 20px; /* Updated for slideshow and overlay */
 }
 
 .close-overlay {
@@ -1104,10 +1103,98 @@ main {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
+    z-index: 2100;
 }
 
 .close-overlay:hover {
-    transform: scale(1.2);
-    filter: brightness(1.2);
+    transform: scale(1.05);
+    filter: brightness(1.05);
     cursor: pointer;
+}
+
+/* Slideshow Tab Row (similar to tab-row) */
+.slideshow-tab-row {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.slideshow-tab-container {
+    margin: 0 10px;
+}
+
+.slideshow-tab {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    transform: scale(1); /* Base scale */
+}
+
+.slideshow-tab:hover {
+    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.05); /* 10% size increase on hover */
+}
+
+.slideshow-tab.active {
+    background: linear-gradient(45deg, #B0B0B0, #FFFFFF, #B0B0B0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Slideshow Container */
+.slideshow {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.slideshow-images {
+    position: relative;
+    height: 450px; /* Adjust based on image aspect ratio */
+}
+
+.slideshow-image {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer; /* Indicate clickability */
+}
+
+.slideshow-image.active {
+    display: block;
+}
+
+/* Image Overlay */
+#image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 3000;
+    display: none;
+}
+
+#overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
 }

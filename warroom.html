@@ -51,7 +51,7 @@
                         </a>
                     </div>
                     <div class="tab-container">
-                        <a class="design-tab" href="#" onclick="toggleSection('level-design')">
+                        <a class="design-tab active" href="#" onclick="toggleSection('level-design')">
                             <span>Level Design</span>
                         </a>
                     </div>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
 
-                <div id="design-philosophy" class="designSection">
+                <div id="design-philosophy" class="designSection" style="display: none;">
                     <h1 class="vaultH1">Design Philosophy</h1>
                     <p class="bioiSectionTxt">Pre-development group ideation meetings. My new peeve. Assembling a team of people to sit in a zoom call and conjure a unique game idea that the entire collective history of game designer concentration has itself failed to conjure is frankly less likely to produce your company's magnum opus than having it descend upon you while singing your favourite Taylor Swift single in the shower. The "think then build" approach leads only to blank page syndrome and uninspired pseudo-art. But surely the opposite, to build and then think is no better. There is hope, however, provided by none other than Hidemaro Fujibayashi in this video as he recalls the design process that led him to create the masterpiece that is The Legend of Zelda: Breath of the Wild.</p><br>
 
@@ -100,9 +100,74 @@
                     <p class="bioiSectionTxt">And how can a game achieve all this? Among a million other things, it needs a great core game loop, it needs a great progression home, it needs a desirable means of continual updates, it needs an appropriate susceptibility to the player's demands, it needs an effective inbuilt teaching system, it needs a source for sympathy, it needs to promote cognitive mapping, it needs to facilitate perfection resolution, and it needs to create artistic paradox. To me, game design is not just about ideating and tweaking. But rather it is about creating beautiful and important art through a balance of exploration, interaction, story, and play.<br><br></p>
                 </div>
 
-                <div id="level-design" class="designSection" style="display: none;">
+                <div id="level-design" class="designSection" style="display: block;">
                     <h1 class="vaultH1">Level Design</h1>
                     <p class="bioiSectionTxt">I employ a player-first approach that crafts worlds with natural rhythm - spaces that breathe between tension and release, punctuated by meaningful surprises and clear gameplay incentives. My background as a writer informs how I stage memorable moments, transforming functional layouts into compelling environmental narratives and fair and intuitive spatial dynamics.</p>
+                    
+                    <!-- Slideshow Tabs -->
+                    <div class="slideshow-tab-row">
+                        <div class="slideshow-tab-container">
+                            <a class="slideshow-tab active" href="#" onclick="toggleSlideshow('platformer', event)">
+                                <span>Platformer</span>
+                            </a>
+                        </div>
+                        <div class="slideshow-tab-container">
+                            <a class="slideshow-tab" href="#" onclick="toggleSlideshow('fps', event)">
+                                <span>FPS</span>
+                            </a>
+                        </div>
+                        <div class="slideshow-tab-container">
+                            <a class="slideshow-tab" href="#" onclick="toggleSlideshow('racetrack', event)">
+                                <span>Racetrack</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slideshows -->
+                    <div id="platformer" class="slideshow" style="display: block;">
+                        <i class="fas fa-chevron-left nav-arrow nav-arrow-left" onclick="prevSlide('platformer')"></i>
+                        <div class="slideshow-images">
+                            <img src="resources/Magno/level-1-2.png" alt="Platformer Level 1-2" class="slideshow-image active" onclick="openOverlay('platformer', 0)">
+                            <img src="resources/Magno/level-2-1.png" alt="Platformer Level 2-1" class="slideshow-image" onclick="openOverlay('platformer', 1)">
+                            <img src="resources/Magno/level-3-1.png" alt="Platformer Level 3-1" class="slideshow-image" onclick="openOverlay('platformer', 2)">
+                            <img src="resources/Magno/level-4-1.png" alt="Platformer Level 4-1" class="slideshow-image" onclick="openOverlay('platformer', 3)">
+                            <img src="resources/Magno/level-5-1.png" alt="Platformer Level 5-1" class="slideshow-image" onclick="openOverlay('platformer', 4)">
+                        </div>
+                        <i class="fas fa-chevron-right nav-arrow nav-arrow-right" onclick="nextSlide('platformer')"></i>
+                    </div>
+
+                    <div id="fps" class="slideshow" style="display: none;">
+                        <i class="fas fa-chevron-left nav-arrow nav-arrow-left" onclick="prevSlide('fps')"></i>
+                        <div class="slideshow-images">
+                            <img src="resources/FPS/FPS1.png" alt="FPS Level 1" class="slideshow-image active" onclick="openOverlay('fps', 0)">
+                            <img src="resources/FPS/FPS2.png" alt="FPS Level 2" class="slideshow-image" onclick="openOverlay('fps', 1)">
+                            <img src="resources/FPS/FPS3.png" alt="FPS Level 3" class="slideshow-image" onclick="openOverlay('fps', 2)">
+                            <img src="resources/FPS/FPS4.png" alt="FPS Level 4" class="slideshow-image" onclick="openOverlay('fps', 3)">
+                            <img src="resources/FPS/FPS5.png" alt="FPS Level 5" class="slideshow-image" onclick="openOverlay('fps', 4)">
+                            <img src="resources/FPS/FPS6.png" alt="FPS Level 6" class="slideshow-image" onclick="openOverlay('fps', 5)">
+                            <img src="resources/FPS/FPS7.png" alt="FPS Level 7" class="slideshow-image" onclick="openOverlay('fps', 6)">
+                        </div>
+                        <i class="fas fa-chevron-right nav-arrow nav-arrow-right" onclick="nextSlide('fps')"></i>
+                    </div>
+
+                    <div id="racetrack" class="slideshow" style="display: none;">
+                        <i class="fas fa-chevron-left nav-arrow nav-arrow-left" onclick="prevSlide('racetrack')"></i>
+                        <div class="slideshow-images">
+                            <img src="resources/raceTrack/Tracks-2-&-3.png" alt="Racetrack Tracks 2 & 3" class="slideshow-image active" onclick="openOverlay('racetrack', 0)">
+                            <img src="resources/raceTrack/BerserkIcon.png" alt="Racetrack Berserk Icon" class="slideshow-image" onclick="openOverlay('racetrack', 1)">
+                            <img src="resources/raceTrack/BootlegIcon.png" alt="Racetrack Bootleg Icon" class="slideshow-image" onclick="openOverlay('racetrack', 2)">
+                        </div>
+                        <i class="fas fa-chevron-right nav-arrow nav-arrow-right" onclick="nextSlide('racetrack')"></i>
+                    </div>
+
+                    <!-- Image Overlay -->
+                    <div id="image-overlay" style="display: none;">
+                        <i class="fas fa-times close-overlay" onclick="closeOverlay()"></i>
+                        <i class="fas fa-chevron-left nav-arrow nav-arrow-left" onclick="prevSlide(currentSlideshow)"></i>
+                        <img id="overlay-image" src="" alt="Full-screen image">
+                        <i class="fas fa-chevron-right nav-arrow nav-arrow-right" onclick="nextSlide(currentSlideshow)"></i>
+                    </div>
+
                     <p class="bioiSectionTxt">I prioritise intuitive wayfinding through subtle visual language, balanced with organic opportunities for player expression. Every junction becomes a storytelling device - not just multiple paths, but multiple stories. Rooted in cognitive psychology, my designs create the illusion of unscripted freedom while maintaining deliberate pacing. I pride myself on my ability to do a lot with very little and pack style into a husk and depth into a puddle, crafting richness from simplicity.</p>
                     
                     <p class="bioiSectionTxt">My strength lies in maximalism through minimalism:</p>
@@ -217,6 +282,90 @@
                 // Add active class to clicked tab
                 event.target.closest('.design-tab').classList.add('active');
             }
+
+            function toggleSlideshow(slideshowId, event) {
+                if (event) {
+                    event.preventDefault(); // Prevent default anchor behavior (scroll to top)
+                }
+                
+                // Hide all slideshows
+                document.getElementById('platformer').style.display = 'none';
+                document.getElementById('fps').style.display = 'none';
+                document.getElementById('racetrack').style.display = 'none';
+                
+                // Remove active class from all slideshow tabs
+                document.querySelectorAll('.slideshow-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Show the selected slideshow
+                document.getElementById(slideshowId).style.display = 'block';
+                
+                // Add active class to clicked tab
+                event.target.closest('.slideshow-tab').classList.add('active');
+                
+                // Reset to first image
+                const slideshow = document.getElementById(slideshowId);
+                const images = slideshow.querySelectorAll('.slideshow-image');
+                images.forEach(img => img.classList.remove('active'));
+                if (images.length > 0) {
+                    images[0].classList.add('active');
+                    slideIndices[slideshowId] = 0;
+                }
+            }
+
+            // Track current slide index and slideshow for each slideshow
+            const slideIndices = {
+                platformer: 0,
+                fps: 0,
+                racetrack: 0
+            };
+            let currentSlideshow = 'platformer'; // Track active slideshow for overlay
+
+            function showSlide(slideshowId, index) {
+                const slideshow = document.getElementById(slideshowId);
+                const images = slideshow.querySelectorAll('.slideshow-image');
+                if (index >= images.length) slideIndices[slideshowId] = 0;
+                if (index < 0) slideIndices[slideshowId] = images.length - 1;
+                images.forEach((img, i) => {
+                    img.classList.toggle('active', i === slideIndices[slideshowId]);
+                });
+                // Update overlay image if open
+                if (document.getElementById('image-overlay').style.display === 'block' && slideshowId === currentSlideshow) {
+                    document.getElementById('overlay-image').src = images[slideIndices[slideshowId]].src;
+                }
+            }
+
+            function nextSlide(slideshowId) {
+                slideIndices[slideshowId]++;
+                currentSlideshow = slideshowId;
+                showSlide(slideshowId, slideIndices[slideshowId]);
+            }
+
+            function prevSlide(slideshowId) {
+                slideIndices[slideshowId]--;
+                currentSlideshow = slideshowId;
+                showSlide(slideshowId, slideIndices[slideshowId]);
+            }
+
+            function openOverlay(slideshowId, index) {
+                currentSlideshow = slideshowId;
+                slideIndices[slideshowId] = index;
+                const slideshow = document.getElementById(slideshowId);
+                const images = slideshow.querySelectorAll('.slideshow-image');
+                document.getElementById('overlay-image').src = images[index].src;
+                document.getElementById('image-overlay').style.display = 'block';
+                showSlide(slideshowId, index);
+            }
+
+            function closeOverlay() {
+                document.getElementById('image-overlay').style.display = 'none';
+            }
+
+            // Initialize slideshows
+            showSlide('platformer', 0);
+            showSlide('fps', 0);
+            showSlide('racetrack', 0);
         </script>
 
         <footer>
