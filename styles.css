@@ -32,7 +32,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    animation: gradientAnimation 10s ease infinite;
+    animation: gradientAnimation 10s linear infinite;
     transition: transform 0.075s ease-in-out, filter 0.2s ease-in-out;
     transform: scale(1.1);
     cursor: default;
@@ -734,7 +734,7 @@ main {
     color: transparent;
 
     /* Synchronized Animation */
-    animation: gradientAnimation 5s ease infinite; /* Unified timing */
+    animation: gradientAnimation 5s linear infinite; /* Unified timing */
     
     /* Visual Effects */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
